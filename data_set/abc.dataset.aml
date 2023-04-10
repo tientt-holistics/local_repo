@@ -6,7 +6,7 @@ Dataset abc {
     public_users,
     public_tenants
   ]
-  relationships: [
+  relationships: 
   ]
   owner: 'admin@domain.com'
 }
