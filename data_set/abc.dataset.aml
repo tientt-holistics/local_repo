@@ -1,12 +1,11 @@
 Dataset abc {
   label: 'Abc'
-  description: ''
+  description: "Hello "
   data_source_name: 'development_1'
   models: [
     public_users,
     public_tenants
   ]
-  relationships: 
-  ]
+  relationships: []
   owner: 'admin@domain.com'
 }

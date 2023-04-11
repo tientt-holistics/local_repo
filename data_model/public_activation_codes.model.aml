@@ -1,7 +1,7 @@
 Model public_activation_codes {
   type: 'table'
   label: 'Activation Codes'
-  description: ''
+  description: "Nice"
   data_source_name: 'development_1'
   dimension code {
     label: 'Code'
