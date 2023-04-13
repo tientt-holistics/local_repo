@@ -1,0 +1,87 @@
+Model public_adhoc_queries {
+  type: 'table'
+  label: 'Adhoc Queries'
+  description: ''
+  data_source_name: 'development_1'
+  dimension id {
+    label: 'Id'
+    type: 'number'
+    hidden: false
+    definition: @sql {{ #SOURCE.id }};;
+  }
+  dimension description {
+    label: 'Description'
+    type: 'text'
+    hidden: false
+    definition: @sql {{ #SOURCE.description }};;
+  }
+  dimension query {
+    label: 'Query'
+    type: 'text'
+    hidden: false
+    definition: @sql {{ #SOURCE.query }};;
+  }
+  dimension owner_id {
+    label: 'Owner Id'
+    type: 'number'
+    hidden: false
+    definition: @sql {{ #SOURCE.owner_id }};;
+  }
+  dimension tenant_id {
+    label: 'Tenant Id'
+    type: 'number'
+    hidden: false
+    definition: @sql {{ #SOURCE.tenant_id }};;
+  }
+  dimension data_source_id {
+    label: 'Data Source Id'
+    type: 'number'
+    hidden: false
+    definition: @sql {{ #SOURCE.data_source_id }};;
+  }
+  dimension created_at {
+    label: 'Created At'
+    type: 'datetime'
+    hidden: false
+    definition: @sql {{ #SOURCE.created_at }};;
+  }
+  dimension updated_at {
+    label: 'Updated At'
+    type: 'datetime'
+    hidden: false
+    definition: @sql {{ #SOURCE.updated_at }};;
+  }
+  dimension state {
+    label: 'State'
+    type: 'text'
+    hidden: false
+    definition: @sql {{ #SOURCE.state }};;
+  }
+  dimension start_time {
+    label: 'Start Time'
+    type: 'datetime'
+    hidden: false
+    definition: @sql {{ #SOURCE.start_time }};;
+  }
+  dimension end_time {
+    label: 'End Time'
+    type: 'datetime'
+    hidden: false
+    definition: @sql {{ #SOURCE.end_time }};;
+  }
+  dimension error {
+    label: 'Error'
+    type: 'text'
+    hidden: false
+    definition: @sql {{ #SOURCE.error }};;
+  }
+  dimension non_select_query {
+    label: 'Non Select Query'
+    type: 'truefalse'
+    hidden: false
+    definition: @sql {{ #SOURCE.non_select_query }};;
+  }
+
+  owner: 'admin@domain.com'
+  table_name: '"public"."adhoc_queries"'
+}
