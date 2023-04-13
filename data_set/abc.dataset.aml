@@ -1,6 +1,6 @@
 Dataset abc {
   label: 'Abc'
-  description: '123'
+  description: '12 s3'
   data_source_name: 'development_1'
   models: [
     public_activation_codes,
