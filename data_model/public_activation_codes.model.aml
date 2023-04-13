@@ -4,7 +4,7 @@ Model public_activation_codes {
   description: ''
   data_source_name: 'development_1'
   dimension code {
-    label: 'Code 123'
+    label: 'Code'
     type: 'text'
     hidden: false
     definition: @sql {{ #SOURCE.code }};;
