@@ -6,7 +6,6 @@ Dataset test {
     public_aml_studio_projects,
     public_users
   ]
-  relationships: [
-  ]
+  relationships: [relationship(public_users.id > public_aml_studio_projects.id, true)]
   owner: 'admin@domain.com'
 }
