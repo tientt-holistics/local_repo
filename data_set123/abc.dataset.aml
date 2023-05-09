@@ -1,0 +1,11 @@
+1123Dataset abc {
+  label: 'Abc'
+  description: "Hello world 123 123"
+  data_source_name: 'development_1'
+  models: [
+    public_users,
+    public_tenants,
+  ]
+  relationships: [relationship(public_users.tenant_id > public_tenants.id, true)]
+  owner: 'admin@domain.com'
+}
