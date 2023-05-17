@@ -1,0 +1,87 @@
+Model public_aml_studio_projects {
+  type: 'table'
+  label: 'Aml Studio Projects hello'
+  description: ''
+  data_source_name: 'development_1'
+  dimension id {
+    label: 'Id'
+    type: 'number'
+    hidden: false
+    definition: @sql {{ #SOURCE.id }};;
+  }
+  dimension name {
+    label: 'Name'
+    type: 'text'
+    hidden: false
+    definition: @sql {{ #SOURCE.name }};;
+  }
+  dimension tenant_id {
+    label: 'Tenant Id'
+    type: 'number'
+    hidden: false
+    definition: @sql {{ #SOURCE.tenant_id }};;
+  }
+  dimension production_branch {
+    label: 'Production Branch'
+    type: 'text'
+    hidden: false
+    definition: @sql {{ #SOURCE.production_branch }};;
+  }
+  dimension remote_url_origin {
+    label: 'Remote Url Origin'
+    type: 'text'
+    hidden: false
+    definition: @sql {{ #SOURCE.remote_url_origin }};;
+  }
+  dimension deploy_public_key {
+    label: 'Deploy Public Key'
+    type: 'text'
+    hidden: false
+    definition: @sql {{ #SOURCE.deploy_public_key }};;
+  }
+  dimension deploy_private_key {
+    label: 'Deploy Private Key'
+    type: 'text'
+    hidden: false
+    definition: @sql {{ #SOURCE.deploy_private_key }};;
+  }
+  dimension deploy_username {
+    label: 'Deploy Username'
+    type: 'text'
+    hidden: false
+    definition: @sql {{ #SOURCE.deploy_username }};;
+  }
+  dimension deploy_password {
+    label: 'Deploy Password'
+    type: 'text'
+    hidden: false
+    definition: @sql {{ #SOURCE.deploy_password }};;
+  }
+  dimension created_at {
+    label: 'Created At'
+    type: 'datetime'
+    hidden: false
+    definition: @sql {{ #SOURCE.created_at }};;
+  }
+  dimension updated_at {
+    label: 'Updated At'
+    type: 'datetime'
+    hidden: false
+    definition: @sql {{ #SOURCE.updated_at }};;
+  }
+  dimension passphrase {
+    label: 'Passphrase'
+    type: 'text'
+    hidden: false
+    definition: @sql {{ #SOURCE.passphrase }};;
+  }
+  dimension settings {
+    label: 'Settings'
+    type: 'unknown'
+    hidden: false
+    definition: @sql {{ #SOURCE.settings }};;
+  }
+
+  owner: 'admin@domain.com'
+  table_name: '"public"."aml_studio_projects"'
+}
