@@ -1,0 +1,11 @@
+Dataset test {
+  label: 'Test'
+  description: ''
+  data_source_name: 'development_1'
+  models: [
+    public_aml_studio_projects,
+    public_users
+  ]
+  relationships: [relationship(public_users.id > public_aml_studio_projects.id, true)]
+  owner: 'admin@domain.com'
+}
