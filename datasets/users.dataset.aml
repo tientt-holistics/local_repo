@@ -6,7 +6,6 @@ Dataset users {
     public_users,
     public_tenants
   ]
-  relationships: [
-  ]
+  relationships: [relationship(public_users.role > public_tenants.settings, true)]
   owner: 'admin@domain.com'
 }
