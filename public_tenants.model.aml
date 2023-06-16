@@ -5,7 +5,7 @@ Model public_tenants {
   data_source_name: 'development_1'
   dimension id {
     label: 'Id'
-    type: 'number'
+    type: 'text'
     hidden: false
     definition: @sql {{ #SOURCE.id }};;
   }
