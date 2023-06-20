@@ -195,6 +195,11 @@ Model public_users {
     hidden: false
     definition: @sql {{ #SOURCE.job_title }};;
   }
+  dimension tien {
+    label: "Tien"
+    type: "text"
+    definition: @sql {{ nux }};;
+  }
 
   owner: 'admin@domain.com'
   table_name: '"public"."users"'
