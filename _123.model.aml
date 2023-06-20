@@ -195,6 +195,16 @@ Model _123 {
     hidden: false
     definition: @sql {{ #SOURCE.job_title }};;
   }
+  dimension new_field {
+    label: "New Field"
+    type: "text"
+    definition: @sql {{ allow_authentication_token }};;
+  }
+  dimension jdjdsf {
+    label: "Jdjdsf"
+    type: "text"
+    definition: @sql {{ name }};;
+  }
 
   owner: 'admin@domain.com'
   query: @sql select * from public.users;;
