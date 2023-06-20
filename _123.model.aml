@@ -205,6 +205,11 @@ Model _123 {
     type: "text"
     definition: @sql {{ name }};;
   }
+  dimension fgsfgs {
+    label: "Fgsfgs"
+    type: "text"
+    definition: @sql {{ role }};;
+  }
 
   owner: 'admin@domain.com'
   query: @sql select * from public.users;;
