@@ -48,4 +48,10 @@ Model public_tenants {
 
   owner: 'admin@domain.com'
   table_name: '"public"."tenants"'
+  measure sdafasdf {
+    label: "Sdafasdf"
+    type: "number"
+    definition: @sql {{ created_at }};;
+    aggregation_type: "count distinct"
+  }
 }
