@@ -203,4 +203,10 @@ Model public_users {
 
   owner: 'admin@domain.com'
   table_name: '"public"."users"'
+  measure measure {
+    label: "Measure"
+    type: "number"
+    definition: @sql {{ role }};;
+    aggregation_type: "avg"
+  }
 }
