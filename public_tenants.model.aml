@@ -45,6 +45,11 @@ Model public_tenants {
     hidden: false
     definition: @sql {{ #SOURCE.duplicated }};;
   }
+  dimension hellotien {
+    label: "Hellotien"
+    type: "text"
+    definition: @sql {{ id }} + {{ hellotien }};;
+  }
 
   owner: 'admin@domain.com'
   table_name: '"public"."tenants"'
