@@ -52,6 +52,6 @@ Model public_tenants_1 {
     label: "Hello World"
     type: "number"
     definition: @sql COUNT({{ id }});;
-    aggregation_type: "average"
+    aggregation_type: "avg"
   }
 }
