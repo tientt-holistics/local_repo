@@ -48,4 +48,10 @@ Model public_tenants_1 {
 
   owner: 'admin@domain.com'
   table_name: '"public"."tenants"'
+  measure hello_world {
+    label: "Hello World"
+    type: "number"
+    definition: @sql COUNT({{ id }});;
+    aggregation_type: "count"
+  }
 }
