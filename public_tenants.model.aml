@@ -58,5 +58,6 @@ Model public_tenants {
     type: "number"
     definition: @sql {{ created_at }};;
     aggregation_type: "count distinct"
+    format: "#,###0.00"
   }
 }
