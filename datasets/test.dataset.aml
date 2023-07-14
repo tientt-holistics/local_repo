@@ -1,0 +1,12 @@
+Dataset test {
+  label: 'Test'
+  description: ''
+  data_source_name: 'development_1'
+  models: [
+    public_users,
+    public_tenants
+  ]
+  relationships: [
+  ]
+  owner: 'admin@domain.com'
+}

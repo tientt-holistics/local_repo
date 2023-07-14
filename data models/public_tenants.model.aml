@@ -1,12 +1,11 @@
 Model public_tenants {
   type: 'table'
   label: 'Tenants'
-  description: ''
+  description: "xasdfasdf asdfadf adf adsf adff"
   data_source_name: 'development_1'
   dimension id {
-    label: 'Id'
-    type: 'number'
-    hidden: false
+    label: "Id"
+    type: "number"
     definition: @sql {{ #SOURCE.id }};;
   }
   dimension name {
@@ -45,7 +44,34 @@ Model public_tenants {
     hidden: false
     definition: @sql {{ #SOURCE.duplicated }};;
   }
+  dimension abc {
+    label: "Abc"
+    type: "date"
+    definition: @sql {{ abc }};;
+    format: "LLL dd yyyy"
+  }
+  dimension sfgfg {
+    label: "Sfgfg"
+    type: "text"
+    definition: @sql {{ updated_at }};;
+  }
+  dimension adsfsdf {
+    label: "Adsfsdf"
+    type: "text"
+    definition: @sql {{ created_at }};;
+  }
+  dimension adsfadf {
+    label: "Adsfadf"
+    type: "text"
+    definition: @sql {{ name }};;
+  }
 
   owner: 'admin@domain.com'
-  table_name: '"public"."tenants"'
+  table_name: "\"public\".\"tenants\""
+  measure test {
+    label: "Test"
+    type: "number"
+    definition: @sql {{ id }};;
+    aggregation_type: "custom"
+  }
 }
