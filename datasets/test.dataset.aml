@@ -1,6 +1,6 @@
 Dataset test {
   label: 'Test'
-  description: ''
+  description: 'Hello world'
   data_source_name: 'development_1'
   models: [
     public_users,
