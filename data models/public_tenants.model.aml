@@ -1,7 +1,7 @@
 Model public_tenants {
   type: 'table'
   label: 'Tenants'
-  description: "xasdfasdf asdfadf adf adsf adff"
+  description: "xasdfasdf asdfadf adf adsf adff asdfdf asdfasdf asdfasdf"
   data_source_name: 'development_1'
   dimension id {
     label: "Id"
@@ -64,6 +64,12 @@ Model public_tenants {
     label: "Adsfadf"
     type: "text"
     definition: @sql {{ name }};;
+  }
+  dimension hello {
+    label: "Hello"
+    type: "text"
+    definition: @sql {{ duplicated }};;
+    description: "123"
   }
 
   owner: 'admin@domain.com'
