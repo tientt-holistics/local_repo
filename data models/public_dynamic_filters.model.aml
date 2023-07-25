@@ -1,0 +1,69 @@
+Model public_dynamic_filters {
+  type: 'table'
+  label: 'Dynamic Filters'
+  description: ''
+  data_source_name: 'development_1'
+  dimension id {
+    label: 'Id'
+    type: 'number'
+    hidden: false
+    definition: @sql {{ #SOURCE.id }};;
+  }
+  dimension order {
+    label: 'Order'
+    type: 'number'
+    hidden: false
+    definition: @sql {{ #SOURCE.order }};;
+  }
+  dimension dynamic_filter_definition_id {
+    label: 'Dynamic Filter Definition Id'
+    type: 'number'
+    hidden: false
+    definition: @sql {{ #SOURCE.dynamic_filter_definition_id }};;
+  }
+  dimension dynamic_filter_holdable_type {
+    label: 'Dynamic Filter Holdable Type'
+    type: 'text'
+    hidden: false
+    definition: @sql {{ #SOURCE.dynamic_filter_holdable_type }};;
+  }
+  dimension dynamic_filter_holdable_id {
+    label: 'Dynamic Filter Holdable Id'
+    type: 'number'
+    hidden: false
+    definition: @sql {{ #SOURCE.dynamic_filter_holdable_id }};;
+  }
+  dimension user_id {
+    label: 'User Id'
+    type: 'number'
+    hidden: false
+    definition: @sql {{ #SOURCE.user_id }};;
+  }
+  dimension tenant_id {
+    label: 'Tenant Id'
+    type: 'number'
+    hidden: false
+    definition: @sql {{ #SOURCE.tenant_id }};;
+  }
+  dimension created_at {
+    label: 'Created At'
+    type: 'datetime'
+    hidden: false
+    definition: @sql {{ #SOURCE.created_at }};;
+  }
+  dimension updated_at {
+    label: 'Updated At'
+    type: 'datetime'
+    hidden: false
+    definition: @sql {{ #SOURCE.updated_at }};;
+  }
+  dimension drillthrough_enabled {
+    label: 'Drillthrough Enabled'
+    type: 'truefalse'
+    hidden: false
+    definition: @sql {{ #SOURCE.drillthrough_enabled }};;
+  }
+
+  owner: 'admin@domain.com'
+  table_name: '"public"."dynamic_filters"'
+}

@@ -1,0 +1,81 @@
+Model public_table_models {
+  type: 'table'
+  label: 'Table Models'
+  description: ''
+  data_source_name: 'development_1'
+  dimension id {
+    label: 'Id'
+    type: 'number'
+    hidden: false
+    definition: @sql {{ #SOURCE.id }};;
+  }
+  dimension tenant_id {
+    label: 'Tenant Id'
+    type: 'number'
+    hidden: false
+    definition: @sql {{ #SOURCE.tenant_id }};;
+  }
+  dimension data_source_id {
+    label: 'Data Source Id'
+    type: 'number'
+    hidden: false
+    definition: @sql {{ #SOURCE.data_source_id }};;
+  }
+  dimension table_name {
+    label: 'Table Name'
+    type: 'text'
+    hidden: false
+    definition: @sql {{ #SOURCE.table_name }};;
+  }
+  dimension auto_detect_fields {
+    label: 'Auto Detect Fields'
+    type: 'truefalse'
+    hidden: false
+    definition: @sql {{ #SOURCE.auto_detect_fields }};;
+  }
+  dimension cached_fields {
+    label: 'Cached Fields'
+    type: 'unknown'
+    hidden: false
+    definition: @sql {{ #SOURCE.cached_fields }};;
+  }
+  dimension excluded_fields {
+    label: 'Excluded Fields'
+    type: 'unknown'
+    hidden: false
+    definition: @sql {{ #SOURCE.excluded_fields }};;
+  }
+  dimension custom_fields {
+    label: 'Custom Fields'
+    type: 'unknown'
+    hidden: false
+    definition: @sql {{ #SOURCE.custom_fields }};;
+  }
+  dimension created_at {
+    label: 'Created At'
+    type: 'datetime'
+    hidden: false
+    definition: @sql {{ #SOURCE.created_at }};;
+  }
+  dimension updated_at {
+    label: 'Updated At'
+    type: 'datetime'
+    hidden: false
+    definition: @sql {{ #SOURCE.updated_at }};;
+  }
+  dimension data_source_table_id {
+    label: 'Data Source Table Id'
+    type: 'number'
+    hidden: false
+    definition: @sql {{ #SOURCE.data_source_table_id }};;
+  }
+  dimension data_import_id {
+    label: 'Data Import Id'
+    type: 'number'
+    hidden: false
+    definition: @sql {{ #SOURCE.data_import_id }};;
+  }
+
+  owner: 'admin@domain.com'
+  table_name: '"public"."table_models"'
+}

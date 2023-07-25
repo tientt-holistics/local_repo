@@ -1,0 +1,93 @@
+Model public_data_transforms {
+  type: 'table'
+  label: 'Data Transforms'
+  description: ''
+  data_source_name: 'development_1'
+  dimension id {
+    label: 'Id'
+    type: 'number'
+    hidden: false
+    definition: @sql {{ #SOURCE.id }};;
+  }
+  dimension title {
+    label: 'Title'
+    type: 'text'
+    hidden: false
+    definition: @sql {{ #SOURCE.title }};;
+  }
+  dimension description {
+    label: 'Description'
+    type: 'text'
+    hidden: false
+    definition: @sql {{ #SOURCE.description }};;
+  }
+  dimension data_source_id {
+    label: 'Data Source Id'
+    type: 'number'
+    hidden: false
+    definition: @sql {{ #SOURCE.data_source_id }};;
+  }
+  dimension data_dest_id {
+    label: 'Data Dest Id'
+    type: 'number'
+    hidden: false
+    definition: @sql {{ #SOURCE.data_dest_id }};;
+  }
+  dimension owner_id {
+    label: 'Owner Id'
+    type: 'number'
+    hidden: false
+    definition: @sql {{ #SOURCE.owner_id }};;
+  }
+  dimension query {
+    label: 'Query'
+    type: 'text'
+    hidden: false
+    definition: @sql {{ #SOURCE.query }};;
+  }
+  dimension table_config {
+    label: 'Table Config'
+    type: 'unknown'
+    hidden: false
+    definition: @sql {{ #SOURCE.table_config }};;
+  }
+  dimension dest_table_name {
+    label: 'Dest Table Name'
+    type: 'text'
+    hidden: false
+    definition: @sql {{ #SOURCE.dest_table_name }};;
+  }
+  dimension created_at {
+    label: 'Created At'
+    type: 'datetime'
+    hidden: false
+    definition: @sql {{ #SOURCE.created_at }};;
+  }
+  dimension updated_at {
+    label: 'Updated At'
+    type: 'datetime'
+    hidden: false
+    definition: @sql {{ #SOURCE.updated_at }};;
+  }
+  dimension tenant_id {
+    label: 'Tenant Id'
+    type: 'number'
+    hidden: false
+    definition: @sql {{ #SOURCE.tenant_id }};;
+  }
+  dimension dest_schema_name {
+    label: 'Dest Schema Name'
+    type: 'text'
+    hidden: false
+    definition: @sql {{ #SOURCE.dest_schema_name }};;
+  }
+  dimension settings {
+    label: 'Settings'
+    type: 'unknown'
+    hidden: false
+    definition: @sql {{ #SOURCE.settings }};;
+  }
+
+  owner: 'admin@domain.com'
+  table_name: '"public"."data_transforms"'
+}

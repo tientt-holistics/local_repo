@@ -1,0 +1,87 @@
+Model public_shareable_links {
+  type: 'table'
+  label: 'Shareable Links'
+  description: ''
+  data_source_name: 'development_1'
+  dimension id {
+    label: 'Id'
+    type: 'number'
+    hidden: false
+    definition: @sql {{ #SOURCE.id }};;
+  }
+  dimension hash_code {
+    label: 'Hash Code'
+    type: 'text'
+    hidden: false
+    definition: @sql {{ #SOURCE.hash_code }};;
+  }
+  dimension expired_at {
+    label: 'Expired At'
+    type: 'datetime'
+    hidden: false
+    definition: @sql {{ #SOURCE.expired_at }};;
+  }
+  dimension created_at {
+    label: 'Created At'
+    type: 'datetime'
+    hidden: false
+    definition: @sql {{ #SOURCE.created_at }};;
+  }
+  dimension updated_at {
+    label: 'Updated At'
+    type: 'datetime'
+    hidden: false
+    definition: @sql {{ #SOURCE.updated_at }};;
+  }
+  dimension tenant_id {
+    label: 'Tenant Id'
+    type: 'number'
+    hidden: false
+    definition: @sql {{ #SOURCE.tenant_id }};;
+  }
+  dimension title {
+    label: 'Title'
+    type: 'text'
+    hidden: false
+    definition: @sql {{ #SOURCE.title }};;
+  }
+  dimension resource_type {
+    label: 'Resource Type'
+    type: 'text'
+    hidden: false
+    definition: @sql {{ #SOURCE.resource_type }};;
+  }
+  dimension resource_id {
+    label: 'Resource Id'
+    type: 'number'
+    hidden: false
+    definition: @sql {{ #SOURCE.resource_id }};;
+  }
+  dimension owner_id {
+    label: 'Owner Id'
+    type: 'number'
+    hidden: false
+    definition: @sql {{ #SOURCE.owner_id }};;
+  }
+  dimension public_user_id {
+    label: 'Public User Id'
+    type: 'number'
+    hidden: false
+    definition: @sql {{ #SOURCE.public_user_id }};;
+  }
+  dimension password_id {
+    label: 'Password Id'
+    type: 'number'
+    hidden: false
+    definition: @sql {{ #SOURCE.password_id }};;
+  }
+  dimension permission_rules {
+    label: 'Permission Rules'
+    type: 'unknown'
+    hidden: false
+    definition: @sql {{ #SOURCE.permission_rules }};;
+  }
+
+  owner: 'admin@domain.com'
+  table_name: '"public"."shareable_links"'
+}

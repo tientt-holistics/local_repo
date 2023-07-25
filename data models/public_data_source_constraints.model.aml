@@ -1,0 +1,99 @@
+Model public_data_source_constraints {
+  type: 'table'
+  label: 'Data Source Constraints'
+  description: ''
+  data_source_name: 'development_1'
+  dimension id {
+    label: 'Id'
+    type: 'number'
+    hidden: false
+    definition: @sql {{ #SOURCE.id }};;
+  }
+  dimension data_source_id {
+    label: 'Data Source Id'
+    type: 'number'
+    hidden: false
+    definition: @sql {{ #SOURCE.data_source_id }};;
+  }
+  dimension constraint_name {
+    label: 'Constraint Name'
+    type: 'text'
+    hidden: false
+    definition: @sql {{ #SOURCE.constraint_name }};;
+  }
+  dimension constraint_type {
+    label: 'Constraint Type'
+    type: 'text'
+    hidden: false
+    definition: @sql {{ #SOURCE.constraint_type }};;
+  }
+  dimension constraint_schema {
+    label: 'Constraint Schema'
+    type: 'text'
+    hidden: false
+    definition: @sql {{ #SOURCE.constraint_schema }};;
+  }
+  dimension data_source_table_id {
+    label: 'Data Source Table Id'
+    type: 'number'
+    hidden: false
+    definition: @sql {{ #SOURCE.data_source_table_id }};;
+  }
+  dimension referenced_table_id {
+    label: 'Referenced Table Id'
+    type: 'number'
+    hidden: false
+    definition: @sql {{ #SOURCE.referenced_table_id }};;
+  }
+  dimension data_source_column_id {
+    label: 'Data Source Column Id'
+    type: 'number'
+    hidden: false
+    definition: @sql {{ #SOURCE.data_source_column_id }};;
+  }
+  dimension referenced_column_id {
+    label: 'Referenced Column Id'
+    type: 'number'
+    hidden: false
+    definition: @sql {{ #SOURCE.referenced_column_id }};;
+  }
+  dimension ordinal_position {
+    label: 'Ordinal Position'
+    type: 'number'
+    hidden: false
+    definition: @sql {{ #SOURCE.ordinal_position }};;
+  }
+  dimension created_version_id {
+    label: 'Created Version Id'
+    type: 'number'
+    hidden: false
+    definition: @sql {{ #SOURCE.created_version_id }};;
+  }
+  dimension deleted_version_id {
+    label: 'Deleted Version Id'
+    type: 'number'
+    hidden: false
+    definition: @sql {{ #SOURCE.deleted_version_id }};;
+  }
+  dimension tenant_id {
+    label: 'Tenant Id'
+    type: 'number'
+    hidden: false
+    definition: @sql {{ #SOURCE.tenant_id }};;
+  }
+  dimension created_at {
+    label: 'Created At'
+    type: 'datetime'
+    hidden: false
+    definition: @sql {{ #SOURCE.created_at }};;
+  }
+  dimension updated_at {
+    label: 'Updated At'
+    type: 'datetime'
+    hidden: false
+    definition: @sql {{ #SOURCE.updated_at }};;
+  }
+
+  owner: 'admin@domain.com'
+  table_name: '"public"."data_source_constraints"'
+}

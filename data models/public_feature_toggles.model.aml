@@ -1,0 +1,57 @@
+Model public_feature_toggles {
+  type: 'table'
+  label: 'Feature Toggles'
+  description: ''
+  data_source_name: 'development_1'
+  dimension id {
+    label: 'Id'
+    type: 'number'
+    hidden: false
+    definition: @sql {{ #SOURCE.id }};;
+  }
+  dimension key {
+    label: 'Key'
+    type: 'text'
+    hidden: false
+    definition: @sql {{ #SOURCE.key }};;
+  }
+  dimension toggle_mode {
+    label: 'Toggle Mode'
+    type: 'text'
+    hidden: false
+    definition: @sql {{ #SOURCE.toggle_mode }};;
+  }
+  dimension except_tenant_ids {
+    label: 'Except Tenant Ids'
+    type: 'unknown'
+    hidden: false
+    definition: @sql {{ #SOURCE.except_tenant_ids }};;
+  }
+  dimension notes {
+    label: 'Notes'
+    type: 'text'
+    hidden: false
+    definition: @sql {{ #SOURCE.notes }};;
+  }
+  dimension created_at {
+    label: 'Created At'
+    type: 'datetime'
+    hidden: false
+    definition: @sql {{ #SOURCE.created_at }};;
+  }
+  dimension updated_at {
+    label: 'Updated At'
+    type: 'datetime'
+    hidden: false
+    definition: @sql {{ #SOURCE.updated_at }};;
+  }
+  dimension used_for {
+    label: 'Used For'
+    type: 'text'
+    hidden: false
+    definition: @sql {{ #SOURCE.used_for }};;
+  }
+
+  owner: 'admin@domain.com'
+  table_name: '"public"."feature_toggles"'
+}

@@ -1,0 +1,63 @@
+Model public_comments {
+  type: 'table'
+  label: 'Comments'
+  description: ''
+  data_source_name: 'development_1'
+  dimension id {
+    label: 'Id'
+    type: 'number'
+    hidden: false
+    definition: @sql {{ #SOURCE.id }};;
+  }
+  dimension tenant_id {
+    label: 'Tenant Id'
+    type: 'number'
+    hidden: false
+    definition: @sql {{ #SOURCE.tenant_id }};;
+  }
+  dimension user_id {
+    label: 'User Id'
+    type: 'number'
+    hidden: false
+    definition: @sql {{ #SOURCE.user_id }};;
+  }
+  dimension target_type {
+    label: 'Target Type'
+    type: 'text'
+    hidden: false
+    definition: @sql {{ #SOURCE.target_type }};;
+  }
+  dimension target_id {
+    label: 'Target Id'
+    type: 'number'
+    hidden: false
+    definition: @sql {{ #SOURCE.target_id }};;
+  }
+  dimension content {
+    label: 'Content'
+    type: 'text'
+    hidden: false
+    definition: @sql {{ #SOURCE.content }};;
+  }
+  dimension resolved_at {
+    label: 'Resolved At'
+    type: 'datetime'
+    hidden: false
+    definition: @sql {{ #SOURCE.resolved_at }};;
+  }
+  dimension created_at {
+    label: 'Created At'
+    type: 'datetime'
+    hidden: false
+    definition: @sql {{ #SOURCE.created_at }};;
+  }
+  dimension updated_at {
+    label: 'Updated At'
+    type: 'datetime'
+    hidden: false
+    definition: @sql {{ #SOURCE.updated_at }};;
+  }
+
+  owner: 'admin@domain.com'
+  table_name: '"public"."comments"'
+}

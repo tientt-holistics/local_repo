@@ -1,0 +1,33 @@
+Model public_id_ranges {
+  type: 'table'
+  label: 'Id Ranges'
+  description: ''
+  data_source_name: 'development_1'
+  dimension range_start {
+    label: 'Range Start'
+    type: 'number'
+    hidden: false
+    definition: @sql {{ #SOURCE.range_start }};;
+  }
+  dimension range_end {
+    label: 'Range End'
+    type: 'number'
+    hidden: false
+    definition: @sql {{ #SOURCE.range_end }};;
+  }
+  dimension next_start {
+    label: 'Next Start'
+    type: 'number'
+    hidden: false
+    definition: @sql {{ #SOURCE.next_start }};;
+  }
+  dimension acquired_at {
+    label: 'Acquired At'
+    type: 'datetime'
+    hidden: false
+    definition: @sql {{ #SOURCE.acquired_at }};;
+  }
+
+  owner: 'admin@domain.com'
+  table_name: '"public"."id_ranges"'
+}

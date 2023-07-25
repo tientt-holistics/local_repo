@@ -1,0 +1,63 @@
+Model public_filter_values {
+  type: 'table'
+  label: 'Filter Values'
+  description: ''
+  data_source_name: 'development_1'
+  dimension id {
+    label: 'Id'
+    type: 'number'
+    hidden: false
+    definition: @sql {{ #SOURCE.id }};;
+  }
+  dimension tenant_id {
+    label: 'Tenant Id'
+    type: 'number'
+    hidden: false
+    definition: @sql {{ #SOURCE.tenant_id }};;
+  }
+  dimension filter_ownership_id {
+    label: 'Filter Ownership Id'
+    type: 'number'
+    hidden: false
+    definition: @sql {{ #SOURCE.filter_ownership_id }};;
+  }
+  dimension filter_valuable_id {
+    label: 'Filter Valuable Id'
+    type: 'number'
+    hidden: false
+    definition: @sql {{ #SOURCE.filter_valuable_id }};;
+  }
+  dimension filter_valuable_type {
+    label: 'Filter Valuable Type'
+    type: 'text'
+    hidden: false
+    definition: @sql {{ #SOURCE.filter_valuable_type }};;
+  }
+  dimension value {
+    label: 'Value'
+    type: 'unknown'
+    hidden: false
+    definition: @sql {{ #SOURCE.value }};;
+  }
+  dimension settings {
+    label: 'Settings'
+    type: 'unknown'
+    hidden: false
+    definition: @sql {{ #SOURCE.settings }};;
+  }
+  dimension created_at {
+    label: 'Created At'
+    type: 'datetime'
+    hidden: false
+    definition: @sql {{ #SOURCE.created_at }};;
+  }
+  dimension updated_at {
+    label: 'Updated At'
+    type: 'datetime'
+    hidden: false
+    definition: @sql {{ #SOURCE.updated_at }};;
+  }
+
+  owner: 'admin@domain.com'
+  table_name: '"public"."filter_values"'
+}

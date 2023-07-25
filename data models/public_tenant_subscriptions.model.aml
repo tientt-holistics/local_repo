@@ -1,0 +1,129 @@
+Model public_tenant_subscriptions {
+  type: 'table'
+  label: 'Tenant Subscriptions'
+  description: ''
+  data_source_name: 'development_1'
+  dimension id {
+    label: 'Id'
+    type: 'number'
+    hidden: false
+    definition: @sql {{ #SOURCE.id }};;
+  }
+  dimension trial_extended {
+    label: 'Trial Extended'
+    type: 'truefalse'
+    hidden: false
+    definition: @sql {{ #SOURCE.trial_extended }};;
+  }
+  dimension expired_at {
+    label: 'Expired At'
+    type: 'datetime'
+    hidden: false
+    definition: @sql {{ #SOURCE.expired_at }};;
+  }
+  dimension status {
+    label: 'Status'
+    type: 'text'
+    hidden: false
+    definition: @sql {{ #SOURCE.status }};;
+  }
+  dimension tenant_id {
+    label: 'Tenant Id'
+    type: 'number'
+    hidden: false
+    definition: @sql {{ #SOURCE.tenant_id }};;
+  }
+  dimension created_at {
+    label: 'Created At'
+    type: 'datetime'
+    hidden: false
+    definition: @sql {{ #SOURCE.created_at }};;
+  }
+  dimension updated_at {
+    label: 'Updated At'
+    type: 'datetime'
+    hidden: false
+    definition: @sql {{ #SOURCE.updated_at }};;
+  }
+  dimension trial_submission_id {
+    label: 'Trial Submission Id'
+    type: 'number'
+    hidden: false
+    definition: @sql {{ #SOURCE.trial_submission_id }};;
+  }
+  dimension zoho {
+    label: 'Zoho'
+    type: 'unknown'
+    hidden: false
+    definition: @sql {{ #SOURCE.zoho }};;
+  }
+  dimension plan_id {
+    label: 'Plan Id'
+    type: 'number'
+    hidden: false
+    definition: @sql {{ #SOURCE.plan_id }};;
+  }
+  dimension add_users {
+    label: 'Add Users'
+    type: 'number'
+    hidden: false
+    definition: @sql {{ #SOURCE.add_users }};;
+  }
+  dimension add_objects {
+    label: 'Add Objects'
+    type: 'number'
+    hidden: false
+    definition: @sql {{ #SOURCE.add_objects }};;
+  }
+  dimension period_type {
+    label: 'Period Type'
+    type: 'text'
+    hidden: false
+    definition: @sql {{ #SOURCE.period_type }};;
+  }
+  dimension embed_workers {
+    label: 'Embed Workers'
+    type: 'number'
+    hidden: false
+    definition: @sql {{ #SOURCE.embed_workers }};;
+  }
+  dimension trial_pricing_group_id {
+    label: 'Trial Pricing Group Id'
+    type: 'number'
+    hidden: false
+    definition: @sql {{ #SOURCE.trial_pricing_group_id }};;
+  }
+  dimension max_restriction_level {
+    label: 'Max Restriction Level'
+    type: 'text'
+    hidden: false
+    definition: @sql {{ #SOURCE.max_restriction_level }};;
+  }
+  dimension add_query_runs {
+    label: 'Add Query Runs'
+    type: 'number'
+    hidden: false
+    definition: @sql {{ #SOURCE.add_query_runs }};;
+  }
+  dimension start_cycle_at {
+    label: 'Start Cycle At'
+    type: 'datetime'
+    hidden: false
+    definition: @sql {{ #SOURCE.start_cycle_at }};;
+  }
+  dimension is_taxed {
+    label: 'Is Taxed'
+    type: 'truefalse'
+    hidden: false
+    definition: @sql {{ #SOURCE.is_taxed }};;
+  }
+  dimension billing_updating {
+    label: 'Billing Updating'
+    type: 'truefalse'
+    hidden: false
+    definition: @sql {{ #SOURCE.billing_updating }};;
+  }
+
+  owner: 'admin@domain.com'
+  table_name: '"public"."tenant_subscriptions"'
+}

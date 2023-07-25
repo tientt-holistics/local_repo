@@ -1,0 +1,45 @@
+Model public_feature_add_ons {
+  type: 'table'
+  label: 'Feature Add Ons'
+  description: ''
+  data_source_name: 'development_1'
+  dimension id {
+    label: 'Id'
+    type: 'number'
+    hidden: false
+    definition: @sql {{ #SOURCE.id }};;
+  }
+  dimension feature_toggle_id {
+    label: 'Feature Toggle Id'
+    type: 'number'
+    hidden: false
+    definition: @sql {{ #SOURCE.feature_toggle_id }};;
+  }
+  dimension tenant_subscription_id {
+    label: 'Tenant Subscription Id'
+    type: 'number'
+    hidden: false
+    definition: @sql {{ #SOURCE.tenant_subscription_id }};;
+  }
+  dimension desired_toggle_mode {
+    label: 'Desired Toggle Mode'
+    type: 'text'
+    hidden: false
+    definition: @sql {{ #SOURCE.desired_toggle_mode }};;
+  }
+  dimension created_at {
+    label: 'Created At'
+    type: 'datetime'
+    hidden: false
+    definition: @sql {{ #SOURCE.created_at }};;
+  }
+  dimension updated_at {
+    label: 'Updated At'
+    type: 'datetime'
+    hidden: false
+    definition: @sql {{ #SOURCE.updated_at }};;
+  }
+
+  owner: 'admin@domain.com'
+  table_name: '"public"."feature_add_ons"'
+}

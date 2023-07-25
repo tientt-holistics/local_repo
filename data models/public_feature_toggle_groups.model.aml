@@ -1,0 +1,63 @@
+Model public_feature_toggle_groups {
+  type: 'table'
+  label: 'Feature Toggle Groups'
+  description: ''
+  data_source_name: 'development_1'
+  dimension id {
+    label: 'Id'
+    type: 'number'
+    hidden: false
+    definition: @sql {{ #SOURCE.id }};;
+  }
+  dimension name {
+    label: 'Name'
+    type: 'text'
+    hidden: false
+    definition: @sql {{ #SOURCE.name }};;
+  }
+  dimension description {
+    label: 'Description'
+    type: 'text'
+    hidden: false
+    definition: @sql {{ #SOURCE.description }};;
+  }
+  dimension created_at {
+    label: 'Created At'
+    type: 'datetime'
+    hidden: false
+    definition: @sql {{ #SOURCE.created_at }};;
+  }
+  dimension updated_at {
+    label: 'Updated At'
+    type: 'datetime'
+    hidden: false
+    definition: @sql {{ #SOURCE.updated_at }};;
+  }
+  dimension auto_apply_since {
+    label: 'Auto Apply Since'
+    type: 'datetime'
+    hidden: false
+    definition: @sql {{ #SOURCE.auto_apply_since }};;
+  }
+  dimension auto_apply_till {
+    label: 'Auto Apply Till'
+    type: 'datetime'
+    hidden: false
+    definition: @sql {{ #SOURCE.auto_apply_till }};;
+  }
+  dimension docs_url {
+    label: 'Docs Url'
+    type: 'text'
+    hidden: false
+    definition: @sql {{ #SOURCE.docs_url }};;
+  }
+  dimension priority {
+    label: 'Priority'
+    type: 'number'
+    hidden: false
+    definition: @sql {{ #SOURCE.priority }};;
+  }
+
+  owner: 'admin@domain.com'
+  table_name: '"public"."feature_toggle_groups"'
+}

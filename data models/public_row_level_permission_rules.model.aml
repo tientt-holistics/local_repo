@@ -1,0 +1,63 @@
+Model public_row_level_permission_rules {
+  type: 'table'
+  label: 'Row Level Permission Rules'
+  description: ''
+  data_source_name: 'development_1'
+  dimension id {
+    label: 'Id'
+    type: 'number'
+    hidden: false
+    definition: @sql {{ #SOURCE.id }};;
+  }
+  dimension data_set_id {
+    label: 'Data Set Id'
+    type: 'number'
+    hidden: false
+    definition: @sql {{ #SOURCE.data_set_id }};;
+  }
+  dimension field_path {
+    label: 'Field Path'
+    type: 'unknown'
+    hidden: false
+    definition: @sql {{ #SOURCE.field_path }};;
+  }
+  dimension condition {
+    label: 'Condition'
+    type: 'unknown'
+    hidden: false
+    definition: @sql {{ #SOURCE.condition }};;
+  }
+  dimension creator_id {
+    label: 'Creator Id'
+    type: 'number'
+    hidden: false
+    definition: @sql {{ #SOURCE.creator_id }};;
+  }
+  dimension updater_id {
+    label: 'Updater Id'
+    type: 'number'
+    hidden: false
+    definition: @sql {{ #SOURCE.updater_id }};;
+  }
+  dimension tenant_id {
+    label: 'Tenant Id'
+    type: 'number'
+    hidden: false
+    definition: @sql {{ #SOURCE.tenant_id }};;
+  }
+  dimension created_at {
+    label: 'Created At'
+    type: 'datetime'
+    hidden: false
+    definition: @sql {{ #SOURCE.created_at }};;
+  }
+  dimension updated_at {
+    label: 'Updated At'
+    type: 'datetime'
+    hidden: false
+    definition: @sql {{ #SOURCE.updated_at }};;
+  }
+
+  owner: 'admin@domain.com'
+  table_name: '"public"."row_level_permission_rules"'
+}

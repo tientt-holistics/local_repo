@@ -1,0 +1,69 @@
+Model public_dynamic_filter_mappings {
+  type: 'table'
+  label: 'Dynamic Filter Mappings'
+  description: ''
+  data_source_name: 'development_1'
+  dimension id {
+    label: 'Id'
+    type: 'number'
+    hidden: false
+    definition: @sql {{ #SOURCE.id }};;
+  }
+  dimension dynamic_filter_id {
+    label: 'Dynamic Filter Id'
+    type: 'number'
+    hidden: false
+    definition: @sql {{ #SOURCE.dynamic_filter_id }};;
+  }
+  dimension viz_conditionable_type {
+    label: 'Viz Conditionable Type'
+    type: 'text'
+    hidden: false
+    definition: @sql {{ #SOURCE.viz_conditionable_type }};;
+  }
+  dimension viz_conditionable_id {
+    label: 'Viz Conditionable Id'
+    type: 'number'
+    hidden: false
+    definition: @sql {{ #SOURCE.viz_conditionable_id }};;
+  }
+  dimension field_path {
+    label: 'Field Path'
+    type: 'unknown'
+    hidden: false
+    definition: @sql {{ #SOURCE.field_path }};;
+  }
+  dimension user_id {
+    label: 'User Id'
+    type: 'number'
+    hidden: false
+    definition: @sql {{ #SOURCE.user_id }};;
+  }
+  dimension tenant_id {
+    label: 'Tenant Id'
+    type: 'number'
+    hidden: false
+    definition: @sql {{ #SOURCE.tenant_id }};;
+  }
+  dimension created_at {
+    label: 'Created At'
+    type: 'datetime'
+    hidden: false
+    definition: @sql {{ #SOURCE.created_at }};;
+  }
+  dimension updated_at {
+    label: 'Updated At'
+    type: 'datetime'
+    hidden: false
+    definition: @sql {{ #SOURCE.updated_at }};;
+  }
+  dimension aggregation {
+    label: 'Aggregation'
+    type: 'text'
+    hidden: false
+    definition: @sql {{ #SOURCE.aggregation }};;
+  }
+
+  owner: 'admin@domain.com'
+  table_name: '"public"."dynamic_filter_mappings"'
+}

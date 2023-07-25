@@ -1,0 +1,51 @@
+Model public_data_load_syncs {
+  type: 'table'
+  label: 'Data Load Syncs'
+  description: ''
+  data_source_name: 'development_1'
+  dimension id {
+    label: 'Id'
+    type: 'number'
+    hidden: false
+    definition: @sql {{ #SOURCE.id }};;
+  }
+  dimension aml_studio_repository_id {
+    label: 'Aml Studio Repository Id'
+    type: 'number'
+    hidden: false
+    definition: @sql {{ #SOURCE.aml_studio_repository_id }};;
+  }
+  dimension data_loader_name {
+    label: 'Data Loader Name'
+    type: 'text'
+    hidden: false
+    definition: @sql {{ #SOURCE.data_loader_name }};;
+  }
+  dimension data_loader_type {
+    label: 'Data Loader Type'
+    type: 'text'
+    hidden: false
+    definition: @sql {{ #SOURCE.data_loader_type }};;
+  }
+  dimension tenant_id {
+    label: 'Tenant Id'
+    type: 'number'
+    hidden: false
+    definition: @sql {{ #SOURCE.tenant_id }};;
+  }
+  dimension created_at {
+    label: 'Created At'
+    type: 'datetime'
+    hidden: false
+    definition: @sql {{ #SOURCE.created_at }};;
+  }
+  dimension updated_at {
+    label: 'Updated At'
+    type: 'datetime'
+    hidden: false
+    definition: @sql {{ #SOURCE.updated_at }};;
+  }
+
+  owner: 'admin@domain.com'
+  table_name: '"public"."data_load_syncs"'
+}

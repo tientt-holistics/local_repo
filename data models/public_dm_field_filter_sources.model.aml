@@ -1,0 +1,51 @@
+Model public_dm_field_filter_sources {
+  type: 'table'
+  label: 'Dm Field Filter Sources'
+  description: ''
+  data_source_name: 'development_1'
+  dimension id {
+    label: 'Id'
+    type: 'number'
+    hidden: false
+    definition: @sql {{ #SOURCE.id }};;
+  }
+  dimension data_set_id {
+    label: 'Data Set Id'
+    type: 'number'
+    hidden: false
+    definition: @sql {{ #SOURCE.data_set_id }};;
+  }
+  dimension field_path {
+    label: 'Field Path'
+    type: 'unknown'
+    hidden: false
+    definition: @sql {{ #SOURCE.field_path }};;
+  }
+  dimension user_id {
+    label: 'User Id'
+    type: 'number'
+    hidden: false
+    definition: @sql {{ #SOURCE.user_id }};;
+  }
+  dimension tenant_id {
+    label: 'Tenant Id'
+    type: 'number'
+    hidden: false
+    definition: @sql {{ #SOURCE.tenant_id }};;
+  }
+  dimension created_at {
+    label: 'Created At'
+    type: 'datetime'
+    hidden: false
+    definition: @sql {{ #SOURCE.created_at }};;
+  }
+  dimension updated_at {
+    label: 'Updated At'
+    type: 'datetime'
+    hidden: false
+    definition: @sql {{ #SOURCE.updated_at }};;
+  }
+
+  owner: 'admin@domain.com'
+  table_name: '"public"."dm_field_filter_sources"'
+}

@@ -1,0 +1,63 @@
+Model public_client_public_key_usages {
+  type: 'table'
+  label: 'Client Public Key Usages'
+  description: ''
+  data_source_name: 'development_1'
+  dimension id {
+    label: 'Id'
+    type: 'number'
+    hidden: false
+    definition: @sql {{ #SOURCE.id }};;
+  }
+  dimension client_public_key_id {
+    label: 'Client Public Key Id'
+    type: 'number'
+    hidden: false
+    definition: @sql {{ #SOURCE.client_public_key_id }};;
+  }
+  dimension data_source_id {
+    label: 'Data Source Id'
+    type: 'number'
+    hidden: false
+    definition: @sql {{ #SOURCE.data_source_id }};;
+  }
+  dimension tunnel_port {
+    label: 'Tunnel Port'
+    type: 'number'
+    hidden: false
+    definition: @sql {{ #SOURCE.tunnel_port }};;
+  }
+  dimension client_host {
+    label: 'Client Host'
+    type: 'text'
+    hidden: false
+    definition: @sql {{ #SOURCE.client_host }};;
+  }
+  dimension client_port {
+    label: 'Client Port'
+    type: 'text'
+    hidden: false
+    definition: @sql {{ #SOURCE.client_port }};;
+  }
+  dimension created_at {
+    label: 'Created At'
+    type: 'datetime'
+    hidden: false
+    definition: @sql {{ #SOURCE.created_at }};;
+  }
+  dimension updated_at {
+    label: 'Updated At'
+    type: 'datetime'
+    hidden: false
+    definition: @sql {{ #SOURCE.updated_at }};;
+  }
+  dimension tenant_id {
+    label: 'Tenant Id'
+    type: 'number'
+    hidden: false
+    definition: @sql {{ #SOURCE.tenant_id }};;
+  }
+
+  owner: 'admin@domain.com'
+  table_name: '"public"."client_public_key_usages"'
+}

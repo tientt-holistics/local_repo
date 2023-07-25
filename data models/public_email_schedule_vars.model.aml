@@ -1,0 +1,33 @@
+Model public_email_schedule_vars {
+  type: 'table'
+  label: 'Email Schedule Vars'
+  description: ''
+  data_source_name: 'development_1'
+  dimension id {
+    label: 'Id'
+    type: 'number'
+    hidden: false
+    definition: @sql {{ #SOURCE.id }};;
+  }
+  dimension last_execution_time {
+    label: 'Last Execution Time'
+    type: 'datetime'
+    hidden: false
+    definition: @sql {{ #SOURCE.last_execution_time }};;
+  }
+  dimension created_at {
+    label: 'Created At'
+    type: 'datetime'
+    hidden: false
+    definition: @sql {{ #SOURCE.created_at }};;
+  }
+  dimension updated_at {
+    label: 'Updated At'
+    type: 'datetime'
+    hidden: false
+    definition: @sql {{ #SOURCE.updated_at }};;
+  }
+
+  owner: 'admin@domain.com'
+  table_name: '"public"."email_schedule_vars"'
+}

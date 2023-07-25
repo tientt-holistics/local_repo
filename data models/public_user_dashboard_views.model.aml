@@ -1,0 +1,45 @@
+Model public_user_dashboard_views {
+  type: 'table'
+  label: 'User Dashboard Views'
+  description: ''
+  data_source_name: 'development_1'
+  dimension id {
+    label: 'Id'
+    type: 'number'
+    hidden: false
+    definition: @sql {{ #SOURCE.id }};;
+  }
+  dimension user_id {
+    label: 'User Id'
+    type: 'number'
+    hidden: false
+    definition: @sql {{ #SOURCE.user_id }};;
+  }
+  dimension dashboard_id {
+    label: 'Dashboard Id'
+    type: 'number'
+    hidden: false
+    definition: @sql {{ #SOURCE.dashboard_id }};;
+  }
+  dimension views_count {
+    label: 'Views Count'
+    type: 'number'
+    hidden: false
+    definition: @sql {{ #SOURCE.views_count }};;
+  }
+  dimension created_at {
+    label: 'Created At'
+    type: 'datetime'
+    hidden: false
+    definition: @sql {{ #SOURCE.created_at }};;
+  }
+  dimension updated_at {
+    label: 'Updated At'
+    type: 'datetime'
+    hidden: false
+    definition: @sql {{ #SOURCE.updated_at }};;
+  }
+
+  owner: 'admin@domain.com'
+  table_name: '"public"."user_dashboard_views"'
+}

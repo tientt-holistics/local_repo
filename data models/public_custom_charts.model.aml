@@ -1,0 +1,69 @@
+Model public_custom_charts {
+  type: 'table'
+  label: 'Custom Charts'
+  description: ''
+  data_source_name: 'development_1'
+  dimension id {
+    label: 'Id'
+    type: 'number'
+    hidden: false
+    definition: @sql {{ #SOURCE.id }};;
+  }
+  dimension name {
+    label: 'Name'
+    type: 'text'
+    hidden: false
+    definition: @sql {{ #SOURCE.name }};;
+  }
+  dimension creator_id {
+    label: 'Creator Id'
+    type: 'number'
+    hidden: false
+    definition: @sql {{ #SOURCE.creator_id }};;
+  }
+  dimension tenant_id {
+    label: 'Tenant Id'
+    type: 'number'
+    hidden: false
+    definition: @sql {{ #SOURCE.tenant_id }};;
+  }
+  dimension created_at {
+    label: 'Created At'
+    type: 'datetime'
+    hidden: false
+    definition: @sql {{ #SOURCE.created_at }};;
+  }
+  dimension updated_at {
+    label: 'Updated At'
+    type: 'datetime'
+    hidden: false
+    definition: @sql {{ #SOURCE.updated_at }};;
+  }
+  dimension definition {
+    label: 'Definition'
+    type: 'unknown'
+    hidden: false
+    definition: @sql {{ #SOURCE.definition }};;
+  }
+  dimension description {
+    label: 'Description'
+    type: 'text'
+    hidden: false
+    definition: @sql {{ #SOURCE.description }};;
+  }
+  dimension aml_definition {
+    label: 'Aml Definition'
+    type: 'unknown'
+    hidden: false
+    definition: @sql {{ #SOURCE.aml_definition }};;
+  }
+  dimension icon {
+    label: 'Icon'
+    type: 'text'
+    hidden: false
+    definition: @sql {{ #SOURCE.icon }};;
+  }
+
+  owner: 'admin@domain.com'
+  table_name: '"public"."custom_charts"'
+}

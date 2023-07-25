@@ -1,0 +1,51 @@
+Model public_data_import_conversion_logs {
+  type: 'table'
+  label: 'Data Import Conversion Logs'
+  description: ''
+  data_source_name: 'development_1'
+  dimension id {
+    label: 'Id'
+    type: 'number'
+    hidden: false
+    definition: @sql {{ #SOURCE.id }};;
+  }
+  dimension data_import_id {
+    label: 'Data Import Id'
+    type: 'number'
+    hidden: false
+    definition: @sql {{ #SOURCE.data_import_id }};;
+  }
+  dimension old_import_id {
+    label: 'Old Import Id'
+    type: 'number'
+    hidden: false
+    definition: @sql {{ #SOURCE.old_import_id }};;
+  }
+  dimension actor_id {
+    label: 'Actor Id'
+    type: 'number'
+    hidden: false
+    definition: @sql {{ #SOURCE.actor_id }};;
+  }
+  dimension tenant_id {
+    label: 'Tenant Id'
+    type: 'number'
+    hidden: false
+    definition: @sql {{ #SOURCE.tenant_id }};;
+  }
+  dimension created_at {
+    label: 'Created At'
+    type: 'datetime'
+    hidden: false
+    definition: @sql {{ #SOURCE.created_at }};;
+  }
+  dimension updated_at {
+    label: 'Updated At'
+    type: 'datetime'
+    hidden: false
+    definition: @sql {{ #SOURCE.updated_at }};;
+  }
+
+  owner: 'admin@domain.com'
+  table_name: '"public"."data_import_conversion_logs"'
+}

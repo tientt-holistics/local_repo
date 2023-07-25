@@ -1,0 +1,63 @@
+Model public_feature_toggle_group_logs {
+  type: 'table'
+  label: 'Feature Toggle Group Logs'
+  description: ''
+  data_source_name: 'development_1'
+  dimension id {
+    label: 'Id'
+    type: 'number'
+    hidden: false
+    definition: @sql {{ #SOURCE.id }};;
+  }
+  dimension group_id {
+    label: 'Group Id'
+    type: 'number'
+    hidden: false
+    definition: @sql {{ #SOURCE.group_id }};;
+  }
+  dimension toggle_mode {
+    label: 'Toggle Mode'
+    type: 'text'
+    hidden: false
+    definition: @sql {{ #SOURCE.toggle_mode }};;
+  }
+  dimension except_tenant_ids {
+    label: 'Except Tenant Ids'
+    type: 'unknown'
+    hidden: false
+    definition: @sql {{ #SOURCE.except_tenant_ids }};;
+  }
+  dimension created_at {
+    label: 'Created At'
+    type: 'datetime'
+    hidden: false
+    definition: @sql {{ #SOURCE.created_at }};;
+  }
+  dimension updated_at {
+    label: 'Updated At'
+    type: 'datetime'
+    hidden: false
+    definition: @sql {{ #SOURCE.updated_at }};;
+  }
+  dimension tenant_ids {
+    label: 'Tenant Ids'
+    type: 'unknown'
+    hidden: false
+    definition: @sql {{ #SOURCE.tenant_ids }};;
+  }
+  dimension notes {
+    label: 'Notes'
+    type: 'text'
+    hidden: false
+    definition: @sql {{ #SOURCE.notes }};;
+  }
+  dimension owner_id {
+    label: 'Owner Id'
+    type: 'number'
+    hidden: false
+    definition: @sql {{ #SOURCE.owner_id }};;
+  }
+
+  owner: 'admin@domain.com'
+  table_name: '"public"."feature_toggle_group_logs"'
+}

@@ -1,0 +1,57 @@
+Model public_custom_geojsons {
+  type: 'table'
+  label: 'Custom Geojsons'
+  description: ''
+  data_source_name: 'development_1'
+  dimension id {
+    label: 'Id'
+    type: 'number'
+    hidden: false
+    definition: @sql {{ #SOURCE.id }};;
+  }
+  dimension name {
+    label: 'Name'
+    type: 'text'
+    hidden: false
+    definition: @sql {{ #SOURCE.name }};;
+  }
+  dimension url {
+    label: 'Url'
+    type: 'text'
+    hidden: false
+    definition: @sql {{ #SOURCE.url }};;
+  }
+  dimension creator_id {
+    label: 'Creator Id'
+    type: 'number'
+    hidden: false
+    definition: @sql {{ #SOURCE.creator_id }};;
+  }
+  dimension tenant_id {
+    label: 'Tenant Id'
+    type: 'number'
+    hidden: false
+    definition: @sql {{ #SOURCE.tenant_id }};;
+  }
+  dimension created_at {
+    label: 'Created At'
+    type: 'datetime'
+    hidden: false
+    definition: @sql {{ #SOURCE.created_at }};;
+  }
+  dimension updated_at {
+    label: 'Updated At'
+    type: 'datetime'
+    hidden: false
+    definition: @sql {{ #SOURCE.updated_at }};;
+  }
+  dimension properties {
+    label: 'Properties'
+    type: 'unknown'
+    hidden: false
+    definition: @sql {{ #SOURCE.properties }};;
+  }
+
+  owner: 'admin@domain.com'
+  table_name: '"public"."custom_geojsons"'
+}

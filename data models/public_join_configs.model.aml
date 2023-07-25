@@ -1,0 +1,69 @@
+Model public_join_configs {
+  type: 'table'
+  label: 'Join Configs'
+  description: ''
+  data_source_name: 'development_1'
+  dimension id {
+    label: 'Id'
+    type: 'number'
+    hidden: false
+    definition: @sql {{ #SOURCE.id }};;
+  }
+  dimension data_set_id {
+    label: 'Data Set Id'
+    type: 'number'
+    hidden: false
+    definition: @sql {{ #SOURCE.data_set_id }};;
+  }
+  dimension join_id {
+    label: 'Join Id'
+    type: 'number'
+    hidden: false
+    definition: @sql {{ #SOURCE.join_id }};;
+  }
+  dimension direction {
+    label: 'Direction'
+    type: 'number'
+    hidden: false
+    definition: @sql {{ #SOURCE.direction }};;
+  }
+  dimension active {
+    label: 'Active'
+    type: 'truefalse'
+    hidden: false
+    definition: @sql {{ #SOURCE.active }};;
+  }
+  dimension join_on {
+    label: 'Join On'
+    type: 'text'
+    hidden: false
+    definition: @sql {{ #SOURCE.join_on }};;
+  }
+  dimension source_model_id {
+    label: 'Source Model Id'
+    type: 'number'
+    hidden: false
+    definition: @sql {{ #SOURCE.source_model_id }};;
+  }
+  dimension dest_model_id {
+    label: 'Dest Model Id'
+    type: 'number'
+    hidden: false
+    definition: @sql {{ #SOURCE.dest_model_id }};;
+  }
+  dimension link_type {
+    label: 'Link Type'
+    type: 'text'
+    hidden: false
+    definition: @sql {{ #SOURCE.link_type }};;
+  }
+  dimension tenant_id {
+    label: 'Tenant Id'
+    type: 'number'
+    hidden: false
+    definition: @sql {{ #SOURCE.tenant_id }};;
+  }
+
+  owner: 'admin@domain.com'
+  table_name: '"public"."join_configs"'
+}

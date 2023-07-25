@@ -1,0 +1,69 @@
+Model public_app_notifications {
+  type: 'table'
+  label: 'App Notifications'
+  description: ''
+  data_source_name: 'development_1'
+  dimension id {
+    label: 'Id'
+    type: 'number'
+    hidden: false
+    definition: @sql {{ #SOURCE.id }};;
+  }
+  dimension tenant_id {
+    label: 'Tenant Id'
+    type: 'number'
+    hidden: false
+    definition: @sql {{ #SOURCE.tenant_id }};;
+  }
+  dimension recipient_id {
+    label: 'Recipient Id'
+    type: 'number'
+    hidden: false
+    definition: @sql {{ #SOURCE.recipient_id }};;
+  }
+  dimension title {
+    label: 'Title'
+    type: 'text'
+    hidden: false
+    definition: @sql {{ #SOURCE.title }};;
+  }
+  dimension body {
+    label: 'Body'
+    type: 'text'
+    hidden: false
+    definition: @sql {{ #SOURCE.body }};;
+  }
+  dimension read_at {
+    label: 'Read At'
+    type: 'datetime'
+    hidden: false
+    definition: @sql {{ #SOURCE.read_at }};;
+  }
+  dimension created_at {
+    label: 'Created At'
+    type: 'datetime'
+    hidden: false
+    definition: @sql {{ #SOURCE.created_at }};;
+  }
+  dimension updated_at {
+    label: 'Updated At'
+    type: 'datetime'
+    hidden: false
+    definition: @sql {{ #SOURCE.updated_at }};;
+  }
+  dimension meta_data {
+    label: 'Meta Data'
+    type: 'unknown'
+    hidden: false
+    definition: @sql {{ #SOURCE.meta_data }};;
+  }
+  dimension source {
+    label: 'Source'
+    type: 'text'
+    hidden: false
+    definition: @sql {{ #SOURCE.source }};;
+  }
+
+  owner: 'admin@domain.com'
+  table_name: '"public"."app_notifications"'
+}

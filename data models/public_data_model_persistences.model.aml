@@ -1,0 +1,75 @@
+Model public_data_model_persistences {
+  type: 'table'
+  label: 'Data Model Persistences'
+  description: ''
+  data_source_name: 'development_1'
+  dimension id {
+    label: 'Id'
+    type: 'number'
+    hidden: false
+    definition: @sql {{ #SOURCE.id }};;
+  }
+  dimension data_model_id {
+    label: 'Data Model Id'
+    type: 'number'
+    hidden: false
+    definition: @sql {{ #SOURCE.data_model_id }};;
+  }
+  dimension tenant_id {
+    label: 'Tenant Id'
+    type: 'number'
+    hidden: false
+    definition: @sql {{ #SOURCE.tenant_id }};;
+  }
+  dimension schedule_id {
+    label: 'Schedule Id'
+    type: 'number'
+    hidden: false
+    definition: @sql {{ #SOURCE.schedule_id }};;
+  }
+  dimension schema_name {
+    label: 'Schema Name'
+    type: 'text'
+    hidden: false
+    definition: @sql {{ #SOURCE.schema_name }};;
+  }
+  dimension table_name {
+    label: 'Table Name'
+    type: 'text'
+    hidden: false
+    definition: @sql {{ #SOURCE.table_name }};;
+  }
+  dimension last_persisted_at {
+    label: 'Last Persisted At'
+    type: 'datetime'
+    hidden: false
+    definition: @sql {{ #SOURCE.last_persisted_at }};;
+  }
+  dimension mode {
+    label: 'Mode'
+    type: 'text'
+    hidden: false
+    definition: @sql {{ #SOURCE.mode }};;
+  }
+  dimension increment_column {
+    label: 'Increment Column'
+    type: 'text'
+    hidden: false
+    definition: @sql {{ #SOURCE.increment_column }};;
+  }
+  dimension primary_key_column {
+    label: 'Primary Key Column'
+    type: 'text'
+    hidden: false
+    definition: @sql {{ #SOURCE.primary_key_column }};;
+  }
+  dimension user_id {
+    label: 'User Id'
+    type: 'number'
+    hidden: false
+    definition: @sql {{ #SOURCE.user_id }};;
+  }
+
+  owner: 'admin@domain.com'
+  table_name: '"public"."data_model_persistences"'
+}

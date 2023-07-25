@@ -1,0 +1,39 @@
+Model public_global_configs {
+  type: 'table'
+  label: 'Global Configs'
+  description: ''
+  data_source_name: 'development_1'
+  dimension key {
+    label: 'Key'
+    type: 'text'
+    hidden: false
+    definition: @sql {{ #SOURCE.key }};;
+  }
+  dimension value {
+    label: 'Value'
+    type: 'unknown'
+    hidden: false
+    definition: @sql {{ #SOURCE.value }};;
+  }
+  dimension created_at {
+    label: 'Created At'
+    type: 'datetime'
+    hidden: false
+    definition: @sql {{ #SOURCE.created_at }};;
+  }
+  dimension updated_at {
+    label: 'Updated At'
+    type: 'datetime'
+    hidden: false
+    definition: @sql {{ #SOURCE.updated_at }};;
+  }
+  dimension notes {
+    label: 'Notes'
+    type: 'text'
+    hidden: false
+    definition: @sql {{ #SOURCE.notes }};;
+  }
+
+  owner: 'admin@domain.com'
+  table_name: '"public"."global_configs"'
+}

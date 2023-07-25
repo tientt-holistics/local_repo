@@ -1,0 +1,75 @@
+Model public_dynamic_filter_presets {
+  type: 'table'
+  label: 'Dynamic Filter Presets'
+  description: ''
+  data_source_name: 'development_1'
+  dimension id {
+    label: 'Id'
+    type: 'number'
+    hidden: false
+    definition: @sql {{ #SOURCE.id }};;
+  }
+  dimension preset_condition {
+    label: 'Preset Condition'
+    type: 'unknown'
+    hidden: false
+    definition: @sql {{ #SOURCE.preset_condition }};;
+  }
+  dimension dynamic_filter_id {
+    label: 'Dynamic Filter Id'
+    type: 'number'
+    hidden: false
+    definition: @sql {{ #SOURCE.dynamic_filter_id }};;
+  }
+  dimension dynamic_filter_presettable_type {
+    label: 'Dynamic Filter Presettable Type'
+    type: 'text'
+    hidden: false
+    definition: @sql {{ #SOURCE.dynamic_filter_presettable_type }};;
+  }
+  dimension dynamic_filter_presettable_id {
+    label: 'Dynamic Filter Presettable Id'
+    type: 'number'
+    hidden: false
+    definition: @sql {{ #SOURCE.dynamic_filter_presettable_id }};;
+  }
+  dimension user_id {
+    label: 'User Id'
+    type: 'number'
+    hidden: false
+    definition: @sql {{ #SOURCE.user_id }};;
+  }
+  dimension tenant_id {
+    label: 'Tenant Id'
+    type: 'number'
+    hidden: false
+    definition: @sql {{ #SOURCE.tenant_id }};;
+  }
+  dimension created_at {
+    label: 'Created At'
+    type: 'datetime'
+    hidden: false
+    definition: @sql {{ #SOURCE.created_at }};;
+  }
+  dimension updated_at {
+    label: 'Updated At'
+    type: 'datetime'
+    hidden: false
+    definition: @sql {{ #SOURCE.updated_at }};;
+  }
+  dimension public_hidden {
+    label: 'Public Hidden'
+    type: 'truefalse'
+    hidden: false
+    definition: @sql {{ #SOURCE.public_hidden }};;
+  }
+  dimension public_changeable {
+    label: 'Public Changeable'
+    type: 'truefalse'
+    hidden: false
+    definition: @sql {{ #SOURCE.public_changeable }};;
+  }
+
+  owner: 'admin@domain.com'
+  table_name: '"public"."dynamic_filter_presets"'
+}

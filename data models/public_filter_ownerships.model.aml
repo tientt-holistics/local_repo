@@ -1,0 +1,87 @@
+Model public_filter_ownerships {
+  type: 'table'
+  label: 'Filter Ownerships'
+  description: ''
+  data_source_name: 'development_1'
+  dimension id {
+    label: 'Id'
+    type: 'number'
+    hidden: false
+    definition: @sql {{ #SOURCE.id }};;
+  }
+  dimension shared_filter_id {
+    label: 'Shared Filter Id'
+    type: 'number'
+    hidden: false
+    definition: @sql {{ #SOURCE.shared_filter_id }};;
+  }
+  dimension var_name {
+    label: 'Var Name'
+    type: 'text'
+    hidden: false
+    definition: @sql {{ #SOURCE.var_name }};;
+  }
+  dimension label {
+    label: 'Label'
+    type: 'text'
+    hidden: false
+    definition: @sql {{ #SOURCE.label }};;
+  }
+  dimension order {
+    label: 'Order'
+    type: 'number'
+    hidden: false
+    definition: @sql {{ #SOURCE.order }};;
+  }
+  dimension override_default {
+    label: 'Override Default'
+    type: 'truefalse'
+    hidden: false
+    definition: @sql {{ #SOURCE.override_default }};;
+  }
+  dimension default {
+    label: 'Default'
+    type: 'text'
+    hidden: false
+    definition: @sql {{ #SOURCE.default }};;
+  }
+  dimension filterable_id {
+    label: 'Filterable Id'
+    type: 'number'
+    hidden: false
+    definition: @sql {{ #SOURCE.filterable_id }};;
+  }
+  dimension filterable_type {
+    label: 'Filterable Type'
+    type: 'text'
+    hidden: false
+    definition: @sql {{ #SOURCE.filterable_type }};;
+  }
+  dimension created_at {
+    label: 'Created At'
+    type: 'datetime'
+    hidden: false
+    definition: @sql {{ #SOURCE.created_at }};;
+  }
+  dimension updated_at {
+    label: 'Updated At'
+    type: 'datetime'
+    hidden: false
+    definition: @sql {{ #SOURCE.updated_at }};;
+  }
+  dimension tenant_id {
+    label: 'Tenant Id'
+    type: 'number'
+    hidden: false
+    definition: @sql {{ #SOURCE.tenant_id }};;
+  }
+  dimension is_hidden {
+    label: 'Is Hidden'
+    type: 'truefalse'
+    hidden: false
+    definition: @sql {{ #SOURCE.is_hidden }};;
+  }
+
+  owner: 'admin@domain.com'
+  table_name: '"public"."filter_ownerships"'
+}

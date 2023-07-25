@@ -1,0 +1,45 @@
+Model public_feature_plan_rules {
+  type: 'table'
+  label: 'Feature Plan Rules'
+  description: ''
+  data_source_name: 'development_1'
+  dimension id {
+    label: 'Id'
+    type: 'number'
+    hidden: false
+    definition: @sql {{ #SOURCE.id }};;
+  }
+  dimension plan_id {
+    label: 'Plan Id'
+    type: 'number'
+    hidden: false
+    definition: @sql {{ #SOURCE.plan_id }};;
+  }
+  dimension feature_toggle_id {
+    label: 'Feature Toggle Id'
+    type: 'number'
+    hidden: false
+    definition: @sql {{ #SOURCE.feature_toggle_id }};;
+  }
+  dimension desired_toggle_mode {
+    label: 'Desired Toggle Mode'
+    type: 'text'
+    hidden: false
+    definition: @sql {{ #SOURCE.desired_toggle_mode }};;
+  }
+  dimension created_at {
+    label: 'Created At'
+    type: 'datetime'
+    hidden: false
+    definition: @sql {{ #SOURCE.created_at }};;
+  }
+  dimension updated_at {
+    label: 'Updated At'
+    type: 'datetime'
+    hidden: false
+    definition: @sql {{ #SOURCE.updated_at }};;
+  }
+
+  owner: 'admin@domain.com'
+  table_name: '"public"."feature_plan_rules"'
+}

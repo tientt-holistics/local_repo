@@ -1,0 +1,57 @@
+Model public_data_transports {
+  type: 'table'
+  label: 'Data Transports'
+  description: ''
+  data_source_name: 'development_1'
+  dimension id {
+    label: 'Id'
+    type: 'number'
+    hidden: false
+    definition: @sql {{ #SOURCE.id }};;
+  }
+  dimension from_ds_id {
+    label: 'From Ds Id'
+    type: 'number'
+    hidden: false
+    definition: @sql {{ #SOURCE.from_ds_id }};;
+  }
+  dimension dest_ds_id {
+    label: 'Dest Ds Id'
+    type: 'number'
+    hidden: false
+    definition: @sql {{ #SOURCE.dest_ds_id }};;
+  }
+  dimension owner_id {
+    label: 'Owner Id'
+    type: 'number'
+    hidden: false
+    definition: @sql {{ #SOURCE.owner_id }};;
+  }
+  dimension tenant_id {
+    label: 'Tenant Id'
+    type: 'number'
+    hidden: false
+    definition: @sql {{ #SOURCE.tenant_id }};;
+  }
+  dimension created_at {
+    label: 'Created At'
+    type: 'datetime'
+    hidden: false
+    definition: @sql {{ #SOURCE.created_at }};;
+  }
+  dimension updated_at {
+    label: 'Updated At'
+    type: 'datetime'
+    hidden: false
+    definition: @sql {{ #SOURCE.updated_at }};;
+  }
+  dimension configs {
+    label: 'Configs'
+    type: 'unknown'
+    hidden: false
+    definition: @sql {{ #SOURCE.configs }};;
+  }
+
+  owner: 'admin@domain.com'
+  table_name: '"public"."data_transports"'
+}

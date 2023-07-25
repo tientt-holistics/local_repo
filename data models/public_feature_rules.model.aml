@@ -1,0 +1,57 @@
+Model public_feature_rules {
+  type: 'table'
+  label: 'Feature Rules'
+  description: ''
+  data_source_name: 'development_1'
+  dimension id {
+    label: 'Id'
+    type: 'number'
+    hidden: false
+    definition: @sql {{ #SOURCE.id }};;
+  }
+  dimension name {
+    label: 'Name'
+    type: 'text'
+    hidden: false
+    definition: @sql {{ #SOURCE.name }};;
+  }
+  dimension display_name {
+    label: 'Display Name'
+    type: 'text'
+    hidden: false
+    definition: @sql {{ #SOURCE.display_name }};;
+  }
+  dimension notes {
+    label: 'Notes'
+    type: 'text'
+    hidden: false
+    definition: @sql {{ #SOURCE.notes }};;
+  }
+  dimension feature_toggle_key {
+    label: 'Feature Toggle Key'
+    type: 'text'
+    hidden: false
+    definition: @sql {{ #SOURCE.feature_toggle_key }};;
+  }
+  dimension feature_toggle_enabled {
+    label: 'Feature Toggle Enabled'
+    type: 'truefalse'
+    hidden: false
+    definition: @sql {{ #SOURCE.feature_toggle_enabled }};;
+  }
+  dimension created_at {
+    label: 'Created At'
+    type: 'datetime'
+    hidden: false
+    definition: @sql {{ #SOURCE.created_at }};;
+  }
+  dimension updated_at {
+    label: 'Updated At'
+    type: 'datetime'
+    hidden: false
+    definition: @sql {{ #SOURCE.updated_at }};;
+  }
+
+  owner: 'admin@domain.com'
+  table_name: '"public"."feature_rules"'
+}

@@ -1,0 +1,63 @@
+Model public_dbt_integrations {
+  type: 'table'
+  label: 'Dbt Integrations'
+  description: ''
+  data_source_name: 'development_1'
+  dimension id {
+    label: 'Id'
+    type: 'number'
+    hidden: false
+    definition: @sql {{ #SOURCE.id }};;
+  }
+  dimension data_source_id {
+    label: 'Data Source Id'
+    type: 'number'
+    hidden: false
+    definition: @sql {{ #SOURCE.data_source_id }};;
+  }
+  dimension tenant_id {
+    label: 'Tenant Id'
+    type: 'number'
+    hidden: false
+    definition: @sql {{ #SOURCE.tenant_id }};;
+  }
+  dimension user_id {
+    label: 'User Id'
+    type: 'number'
+    hidden: false
+    definition: @sql {{ #SOURCE.user_id }};;
+  }
+  dimension dbt_job_id {
+    label: 'Dbt Job Id'
+    type: 'number'
+    hidden: false
+    definition: @sql {{ #SOURCE.dbt_job_id }};;
+  }
+  dimension dbt_latest_run_id {
+    label: 'Dbt Latest Run Id'
+    type: 'number'
+    hidden: false
+    definition: @sql {{ #SOURCE.dbt_latest_run_id }};;
+  }
+  dimension upload_method {
+    label: 'Upload Method'
+    type: 'text'
+    hidden: false
+    definition: @sql {{ #SOURCE.upload_method }};;
+  }
+  dimension created_at {
+    label: 'Created At'
+    type: 'datetime'
+    hidden: false
+    definition: @sql {{ #SOURCE.created_at }};;
+  }
+  dimension updated_at {
+    label: 'Updated At'
+    type: 'datetime'
+    hidden: false
+    definition: @sql {{ #SOURCE.updated_at }};;
+  }
+
+  owner: 'admin@domain.com'
+  table_name: '"public"."dbt_integrations"'
+}

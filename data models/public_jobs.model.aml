@@ -1,0 +1,111 @@
+Model public_jobs {
+  type: 'table'
+  label: 'Jobs'
+  description: ''
+  data_source_name: 'development_1'
+  dimension id {
+    label: 'Id'
+    type: 'number'
+    hidden: false
+    definition: @sql {{ #SOURCE.id }};;
+  }
+  dimension source_id {
+    label: 'Source Id'
+    type: 'number'
+    hidden: false
+    definition: @sql {{ #SOURCE.source_id }};;
+  }
+  dimension source_type {
+    label: 'Source Type'
+    type: 'text'
+    hidden: false
+    definition: @sql {{ #SOURCE.source_type }};;
+  }
+  dimension user_id {
+    label: 'User Id'
+    type: 'number'
+    hidden: false
+    definition: @sql {{ #SOURCE.user_id }};;
+  }
+  dimension start_time {
+    label: 'Start Time'
+    type: 'datetime'
+    hidden: false
+    definition: @sql {{ #SOURCE.start_time }};;
+  }
+  dimension end_time {
+    label: 'End Time'
+    type: 'datetime'
+    hidden: false
+    definition: @sql {{ #SOURCE.end_time }};;
+  }
+  dimension status {
+    label: 'Status'
+    type: 'number'
+    hidden: false
+    definition: @sql {{ #SOURCE.status }};;
+  }
+  dimension created_at {
+    label: 'Created At'
+    type: 'datetime'
+    hidden: false
+    definition: @sql {{ #SOURCE.created_at }};;
+  }
+  dimension updated_at {
+    label: 'Updated At'
+    type: 'datetime'
+    hidden: false
+    definition: @sql {{ #SOURCE.updated_at }};;
+  }
+  dimension tenant_id {
+    label: 'Tenant Id'
+    type: 'number'
+    hidden: false
+    definition: @sql {{ #SOURCE.tenant_id }};;
+  }
+  dimension data {
+    label: 'Data'
+    type: 'unknown'
+    hidden: false
+    definition: @sql {{ #SOURCE.data }};;
+  }
+  dimension key {
+    label: 'Key'
+    type: 'text'
+    hidden: false
+    definition: @sql {{ #SOURCE.key }};;
+  }
+  dimension stats {
+    label: 'Stats'
+    type: 'unknown'
+    hidden: false
+    definition: @sql {{ #SOURCE.stats }};;
+  }
+  dimension source_method {
+    label: 'Source Method'
+    type: 'text'
+    hidden: false
+    definition: @sql {{ #SOURCE.source_method }};;
+  }
+  dimension tag {
+    label: 'Tag'
+    type: 'text'
+    hidden: false
+    definition: @sql {{ #SOURCE.tag }};;
+  }
+  dimension job_flow_id {
+    label: 'Job Flow Id'
+    type: 'number'
+    hidden: false
+    definition: @sql {{ #SOURCE.job_flow_id }};;
+  }
+  dimension source_args {
+    label: 'Source Args'
+    type: 'unknown'
+    hidden: false
+    definition: @sql {{ #SOURCE.source_args }};;
+  }
+
+  owner: 'admin@domain.com'
+  table_name: '"public"."jobs"'
+}

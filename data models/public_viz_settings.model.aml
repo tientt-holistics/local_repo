@@ -1,0 +1,93 @@
+Model public_viz_settings {
+  type: 'table'
+  label: 'Viz Settings'
+  description: ''
+  data_source_name: 'development_1'
+  dimension id {
+    label: 'Id'
+    type: 'number'
+    hidden: false
+    definition: @sql {{ #SOURCE.id }};;
+  }
+  dimension source_type {
+    label: 'Source Type'
+    type: 'text'
+    hidden: false
+    definition: @sql {{ #SOURCE.source_type }};;
+  }
+  dimension source_id {
+    label: 'Source Id'
+    type: 'number'
+    hidden: false
+    definition: @sql {{ #SOURCE.source_id }};;
+  }
+  dimension viz_type {
+    label: 'Viz Type'
+    type: 'number'
+    hidden: false
+    definition: @sql {{ #SOURCE.viz_type }};;
+  }
+  dimension fields {
+    label: 'Fields'
+    type: 'unknown'
+    hidden: false
+    definition: @sql {{ #SOURCE.fields }};;
+  }
+  dimension settings {
+    label: 'Settings'
+    type: 'unknown'
+    hidden: false
+    definition: @sql {{ #SOURCE.settings }};;
+  }
+  dimension format {
+    label: 'Format'
+    type: 'unknown'
+    hidden: false
+    definition: @sql {{ #SOURCE.format }};;
+  }
+  dimension created_at {
+    label: 'Created At'
+    type: 'datetime'
+    hidden: false
+    definition: @sql {{ #SOURCE.created_at }};;
+  }
+  dimension updated_at {
+    label: 'Updated At'
+    type: 'datetime'
+    hidden: false
+    definition: @sql {{ #SOURCE.updated_at }};;
+  }
+  dimension filters {
+    label: 'Filters'
+    type: 'unknown'
+    hidden: false
+    definition: @sql {{ #SOURCE.filters }};;
+  }
+  dimension adhoc_fields {
+    label: 'Adhoc Fields'
+    type: 'unknown'
+    hidden: false
+    definition: @sql {{ #SOURCE.adhoc_fields }};;
+  }
+  dimension tenant_id {
+    label: 'Tenant Id'
+    type: 'number'
+    hidden: false
+    definition: @sql {{ #SOURCE.tenant_id }};;
+  }
+  dimension custom_chart_id {
+    label: 'Custom Chart Id'
+    type: 'number'
+    hidden: false
+    definition: @sql {{ #SOURCE.custom_chart_id }};;
+  }
+  dimension key {
+    label: 'Key'
+    type: 'text'
+    hidden: false
+    definition: @sql {{ #SOURCE.key }};;
+  }
+
+  owner: 'admin@domain.com'
+  table_name: '"public"."viz_settings"'
+}

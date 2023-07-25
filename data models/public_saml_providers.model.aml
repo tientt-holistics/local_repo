@@ -1,0 +1,57 @@
+Model public_saml_providers {
+  type: 'table'
+  label: 'Saml Providers'
+  description: ''
+  data_source_name: 'development_1'
+  dimension id {
+    label: 'Id'
+    type: 'number'
+    hidden: false
+    definition: @sql {{ #SOURCE.id }};;
+  }
+  dimension tenant_id {
+    label: 'Tenant Id'
+    type: 'number'
+    hidden: false
+    definition: @sql {{ #SOURCE.tenant_id }};;
+  }
+  dimension enabled {
+    label: 'Enabled'
+    type: 'truefalse'
+    hidden: false
+    definition: @sql {{ #SOURCE.enabled }};;
+  }
+  dimension enforced {
+    label: 'Enforced'
+    type: 'truefalse'
+    hidden: false
+    definition: @sql {{ #SOURCE.enforced }};;
+  }
+  dimension idp_sso_target_url {
+    label: 'Idp Sso Target Url'
+    type: 'text'
+    hidden: false
+    definition: @sql {{ #SOURCE.idp_sso_target_url }};;
+  }
+  dimension idp_cert_ciphertext {
+    label: 'Idp Cert Ciphertext'
+    type: 'text'
+    hidden: false
+    definition: @sql {{ #SOURCE.idp_cert_ciphertext }};;
+  }
+  dimension created_at {
+    label: 'Created At'
+    type: 'datetime'
+    hidden: false
+    definition: @sql {{ #SOURCE.created_at }};;
+  }
+  dimension updated_at {
+    label: 'Updated At'
+    type: 'datetime'
+    hidden: false
+    definition: @sql {{ #SOURCE.updated_at }};;
+  }
+
+  owner: 'admin@domain.com'
+  table_name: '"public"."saml_providers"'
+}

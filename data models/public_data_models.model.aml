@@ -1,0 +1,129 @@
+Model public_data_models {
+  type: 'table'
+  label: 'Data Models'
+  description: ''
+  data_source_name: 'development_1'
+  dimension id {
+    label: 'Id'
+    type: 'number'
+    hidden: false
+    definition: @sql {{ #SOURCE.id }};;
+  }
+  dimension tenant_id {
+    label: 'Tenant Id'
+    type: 'number'
+    hidden: false
+    definition: @sql {{ #SOURCE.tenant_id }};;
+  }
+  dimension data_source_id {
+    label: 'Data Source Id'
+    type: 'number'
+    hidden: false
+    definition: @sql {{ #SOURCE.data_source_id }};;
+  }
+  dimension backend_id {
+    label: 'Backend Id'
+    type: 'number'
+    hidden: false
+    definition: @sql {{ #SOURCE.backend_id }};;
+  }
+  dimension backend_type {
+    label: 'Backend Type'
+    type: 'text'
+    hidden: false
+    definition: @sql {{ #SOURCE.backend_type }};;
+  }
+  dimension name {
+    label: 'Name'
+    type: 'text'
+    hidden: false
+    definition: @sql {{ #SOURCE.name }};;
+  }
+  dimension label {
+    label: 'Label'
+    type: 'text'
+    hidden: false
+    definition: @sql {{ #SOURCE.label }};;
+  }
+  dimension created_at {
+    label: 'Created At'
+    type: 'datetime'
+    hidden: false
+    definition: @sql {{ #SOURCE.created_at }};;
+  }
+  dimension updated_at {
+    label: 'Updated At'
+    type: 'datetime'
+    hidden: false
+    definition: @sql {{ #SOURCE.updated_at }};;
+  }
+  dimension owner_id {
+    label: 'Owner Id'
+    type: 'number'
+    hidden: false
+    definition: @sql {{ #SOURCE.owner_id }};;
+  }
+  dimension dimensions {
+    label: 'Dimensions'
+    type: 'unknown'
+    hidden: false
+    definition: @sql {{ #SOURCE.dimensions }};;
+  }
+  dimension measures {
+    label: 'Measures'
+    type: 'unknown'
+    hidden: false
+    definition: @sql {{ #SOURCE.measures }};;
+  }
+  dimension filters {
+    label: 'Filters'
+    type: 'unknown'
+    hidden: false
+    definition: @sql {{ #SOURCE.filters }};;
+  }
+  dimension joins {
+    label: 'Joins'
+    type: 'unknown'
+    hidden: false
+    definition: @sql {{ #SOURCE.joins }};;
+  }
+  dimension settings {
+    label: 'Settings'
+    type: 'unknown'
+    hidden: false
+    definition: @sql {{ #SOURCE.settings }};;
+  }
+  dimension category_id {
+    label: 'Category Id'
+    type: 'number'
+    hidden: false
+    definition: @sql {{ #SOURCE.category_id }};;
+  }
+  dimension description {
+    label: 'Description'
+    type: 'text'
+    hidden: false
+    definition: @sql {{ #SOURCE.description }};;
+  }
+  dimension calculated_fields {
+    label: 'Calculated Fields'
+    type: 'unknown'
+    hidden: false
+    definition: @sql {{ #SOURCE.calculated_fields }};;
+  }
+  dimension fields {
+    label: 'Fields'
+    type: 'unknown'
+    hidden: false
+    definition: @sql {{ #SOURCE.fields }};;
+  }
+  dimension external_fields {
+    label: 'External Fields'
+    type: 'unknown'
+    hidden: false
+    definition: @sql {{ #SOURCE.external_fields }};;
+  }
+
+  owner: 'admin@domain.com'
+  table_name: '"public"."data_models"'
+}

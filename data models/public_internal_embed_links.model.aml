@@ -1,0 +1,45 @@
+Model public_internal_embed_links {
+  type: 'table'
+  label: 'Internal Embed Links'
+  description: ''
+  data_source_name: 'development_1'
+  dimension id {
+    label: 'Id'
+    type: 'number'
+    hidden: false
+    definition: @sql {{ #SOURCE.id }};;
+  }
+  dimension hash_code {
+    label: 'Hash Code'
+    type: 'text'
+    hidden: false
+    definition: @sql {{ #SOURCE.hash_code }};;
+  }
+  dimension usage_type {
+    label: 'Usage Type'
+    type: 'text'
+    hidden: false
+    definition: @sql {{ #SOURCE.usage_type }};;
+  }
+  dimension embed_link_tenant_id {
+    label: 'Embed Link Tenant Id'
+    type: 'number'
+    hidden: false
+    definition: @sql {{ #SOURCE.embed_link_tenant_id }};;
+  }
+  dimension created_at {
+    label: 'Created At'
+    type: 'datetime'
+    hidden: false
+    definition: @sql {{ #SOURCE.created_at }};;
+  }
+  dimension updated_at {
+    label: 'Updated At'
+    type: 'datetime'
+    hidden: false
+    definition: @sql {{ #SOURCE.updated_at }};;
+  }
+
+  owner: 'admin@domain.com'
+  table_name: '"public"."internal_embed_links"'
+}

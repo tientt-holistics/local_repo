@@ -1,0 +1,51 @@
+Model public_feature_toggle_dependencies {
+  type: 'table'
+  label: 'Feature Toggle Dependencies'
+  description: ''
+  data_source_name: 'development_1'
+  dimension id {
+    label: 'Id'
+    type: 'number'
+    hidden: false
+    definition: @sql {{ #SOURCE.id }};;
+  }
+  dimension parent_id {
+    label: 'Parent Id'
+    type: 'number'
+    hidden: false
+    definition: @sql {{ #SOURCE.parent_id }};;
+  }
+  dimension dependant_id {
+    label: 'Dependant Id'
+    type: 'number'
+    hidden: false
+    definition: @sql {{ #SOURCE.dependant_id }};;
+  }
+  dimension dependent_toggle_mode {
+    label: 'Dependent Toggle Mode'
+    type: 'text'
+    hidden: false
+    definition: @sql {{ #SOURCE.dependent_toggle_mode }};;
+  }
+  dimension created_at {
+    label: 'Created At'
+    type: 'datetime'
+    hidden: false
+    definition: @sql {{ #SOURCE.created_at }};;
+  }
+  dimension updated_at {
+    label: 'Updated At'
+    type: 'datetime'
+    hidden: false
+    definition: @sql {{ #SOURCE.updated_at }};;
+  }
+  dimension dependent_type {
+    label: 'Dependent Type'
+    type: 'text'
+    hidden: false
+    definition: @sql {{ #SOURCE.dependent_type }};;
+  }
+
+  owner: 'admin@domain.com'
+  table_name: '"public"."feature_toggle_dependencies"'
+}

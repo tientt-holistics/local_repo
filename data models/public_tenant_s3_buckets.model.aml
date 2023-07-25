@@ -1,0 +1,63 @@
+Model public_tenant_s3_buckets {
+  type: 'table'
+  label: 'Tenant S3 Buckets'
+  description: ''
+  data_source_name: 'development_1'
+  dimension id {
+    label: 'Id'
+    type: 'number'
+    hidden: false
+    definition: @sql {{ #SOURCE.id }};;
+  }
+  dimension bucket_name {
+    label: 'Bucket Name'
+    type: 'text'
+    hidden: false
+    definition: @sql {{ #SOURCE.bucket_name }};;
+  }
+  dimension region {
+    label: 'Region'
+    type: 'text'
+    hidden: false
+    definition: @sql {{ #SOURCE.region }};;
+  }
+  dimension access_key_id {
+    label: 'Access Key Id'
+    type: 'text'
+    hidden: false
+    definition: @sql {{ #SOURCE.access_key_id }};;
+  }
+  dimension secret_access_key {
+    label: 'Secret Access Key'
+    type: 'text'
+    hidden: false
+    definition: @sql {{ #SOURCE.secret_access_key }};;
+  }
+  dimension enabled {
+    label: 'Enabled'
+    type: 'truefalse'
+    hidden: false
+    definition: @sql {{ #SOURCE.enabled }};;
+  }
+  dimension tenant_id {
+    label: 'Tenant Id'
+    type: 'number'
+    hidden: false
+    definition: @sql {{ #SOURCE.tenant_id }};;
+  }
+  dimension created_at {
+    label: 'Created At'
+    type: 'datetime'
+    hidden: false
+    definition: @sql {{ #SOURCE.created_at }};;
+  }
+  dimension updated_at {
+    label: 'Updated At'
+    type: 'datetime'
+    hidden: false
+    definition: @sql {{ #SOURCE.updated_at }};;
+  }
+
+  owner: 'admin@domain.com'
+  table_name: '"public"."tenant_s3_buckets"'
+}

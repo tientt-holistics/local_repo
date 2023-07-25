@@ -1,0 +1,51 @@
+Model public_feature_toggle_group_tenant_logs {
+  type: 'table'
+  label: 'Feature Toggle Group Tenant Logs'
+  description: ''
+  data_source_name: 'development_1'
+  dimension id {
+    label: 'Id'
+    type: 'number'
+    hidden: false
+    definition: @sql {{ #SOURCE.id }};;
+  }
+  dimension action {
+    label: 'Action'
+    type: 'text'
+    hidden: false
+    definition: @sql {{ #SOURCE.action }};;
+  }
+  dimension feature_toggle_group_id {
+    label: 'Feature Toggle Group Id'
+    type: 'number'
+    hidden: false
+    definition: @sql {{ #SOURCE.feature_toggle_group_id }};;
+  }
+  dimension tenant_id {
+    label: 'Tenant Id'
+    type: 'number'
+    hidden: false
+    definition: @sql {{ #SOURCE.tenant_id }};;
+  }
+  dimension actor_id {
+    label: 'Actor Id'
+    type: 'number'
+    hidden: false
+    definition: @sql {{ #SOURCE.actor_id }};;
+  }
+  dimension created_at {
+    label: 'Created At'
+    type: 'datetime'
+    hidden: false
+    definition: @sql {{ #SOURCE.created_at }};;
+  }
+  dimension updated_at {
+    label: 'Updated At'
+    type: 'datetime'
+    hidden: false
+    definition: @sql {{ #SOURCE.updated_at }};;
+  }
+
+  owner: 'admin@domain.com'
+  table_name: '"public"."feature_toggle_group_tenant_logs"'
+}

@@ -1,0 +1,93 @@
+Model public_embed_links {
+  type: 'table'
+  label: 'Embed Links'
+  description: ''
+  data_source_name: 'development_1'
+  dimension id {
+    label: 'Id'
+    type: 'number'
+    hidden: false
+    definition: @sql {{ #SOURCE.id }};;
+  }
+  dimension tenant_id {
+    label: 'Tenant Id'
+    type: 'number'
+    hidden: false
+    definition: @sql {{ #SOURCE.tenant_id }};;
+  }
+  dimension hash_code {
+    label: 'Hash Code'
+    type: 'text'
+    hidden: false
+    definition: @sql {{ #SOURCE.hash_code }};;
+  }
+  dimension title {
+    label: 'Title'
+    type: 'text'
+    hidden: false
+    definition: @sql {{ #SOURCE.title }};;
+  }
+  dimension source_type {
+    label: 'Source Type'
+    type: 'text'
+    hidden: false
+    definition: @sql {{ #SOURCE.source_type }};;
+  }
+  dimension source_id {
+    label: 'Source Id'
+    type: 'number'
+    hidden: false
+    definition: @sql {{ #SOURCE.source_id }};;
+  }
+  dimension owner_id {
+    label: 'Owner Id'
+    type: 'number'
+    hidden: false
+    definition: @sql {{ #SOURCE.owner_id }};;
+  }
+  dimension public_user_id {
+    label: 'Public User Id'
+    type: 'number'
+    hidden: false
+    definition: @sql {{ #SOURCE.public_user_id }};;
+  }
+  dimension customer_filter_ownership_id {
+    label: 'Customer Filter Ownership Id'
+    type: 'number'
+    hidden: false
+    definition: @sql {{ #SOURCE.customer_filter_ownership_id }};;
+  }
+  dimension params {
+    label: 'Params'
+    type: 'unknown'
+    hidden: false
+    definition: @sql {{ #SOURCE.params }};;
+  }
+  dimension created_at {
+    label: 'Created At'
+    type: 'datetime'
+    hidden: false
+    definition: @sql {{ #SOURCE.created_at }};;
+  }
+  dimension updated_at {
+    label: 'Updated At'
+    type: 'datetime'
+    hidden: false
+    definition: @sql {{ #SOURCE.updated_at }};;
+  }
+  dimension secret_key {
+    label: 'Secret Key'
+    type: 'text'
+    hidden: false
+    definition: @sql {{ #SOURCE.secret_key }};;
+  }
+  dimension version {
+    label: 'Version'
+    type: 'number'
+    hidden: false
+    definition: @sql {{ #SOURCE.version }};;
+  }
+
+  owner: 'admin@domain.com'
+  table_name: '"public"."embed_links"'
+}

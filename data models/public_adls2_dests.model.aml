@@ -1,0 +1,69 @@
+Model public_adls2_dests {
+  type: 'table'
+  label: 'Adls2 Dests'
+  description: ''
+  data_source_name: 'development_1'
+  dimension id {
+    label: 'Id'
+    type: 'number'
+    hidden: false
+    definition: @sql {{ #SOURCE.id }};;
+  }
+  dimension data_source_id {
+    label: 'Data Source Id'
+    type: 'number'
+    hidden: false
+    definition: @sql {{ #SOURCE.data_source_id }};;
+  }
+  dimension file_path {
+    label: 'File Path'
+    type: 'text'
+    hidden: false
+    definition: @sql {{ #SOURCE.file_path }};;
+  }
+  dimension format {
+    label: 'Format'
+    type: 'text'
+    hidden: false
+    definition: @sql {{ #SOURCE.format }};;
+  }
+  dimension separator {
+    label: 'Separator'
+    type: 'text'
+    hidden: false
+    definition: @sql {{ #SOURCE.separator }};;
+  }
+  dimension parameterize_csv_headers {
+    label: 'Parameterize Csv Headers'
+    type: 'truefalse'
+    hidden: false
+    definition: @sql {{ #SOURCE.parameterize_csv_headers }};;
+  }
+  dimension include_header {
+    label: 'Include Header'
+    type: 'truefalse'
+    hidden: false
+    definition: @sql {{ #SOURCE.include_header }};;
+  }
+  dimension tenant_id {
+    label: 'Tenant Id'
+    type: 'number'
+    hidden: false
+    definition: @sql {{ #SOURCE.tenant_id }};;
+  }
+  dimension created_at {
+    label: 'Created At'
+    type: 'datetime'
+    hidden: false
+    definition: @sql {{ #SOURCE.created_at }};;
+  }
+  dimension updated_at {
+    label: 'Updated At'
+    type: 'datetime'
+    hidden: false
+    definition: @sql {{ #SOURCE.updated_at }};;
+  }
+
+  owner: 'admin@domain.com'
+  table_name: '"public"."adls2_dests"'
+}

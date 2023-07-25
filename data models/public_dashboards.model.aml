@@ -1,0 +1,117 @@
+Model public_dashboards {
+  type: 'table'
+  label: 'Dashboards'
+  description: ''
+  data_source_name: 'development_1'
+  dimension id {
+    label: 'Id'
+    type: 'number'
+    hidden: false
+    definition: @sql {{ #SOURCE.id }};;
+  }
+  dimension title {
+    label: 'Title'
+    type: 'text'
+    hidden: false
+    definition: @sql {{ #SOURCE.title }};;
+  }
+  dimension created_at {
+    label: 'Created At'
+    type: 'datetime'
+    hidden: false
+    definition: @sql {{ #SOURCE.created_at }};;
+  }
+  dimension updated_at {
+    label: 'Updated At'
+    type: 'datetime'
+    hidden: false
+    definition: @sql {{ #SOURCE.updated_at }};;
+  }
+  dimension tenant_id {
+    label: 'Tenant Id'
+    type: 'number'
+    hidden: false
+    definition: @sql {{ #SOURCE.tenant_id }};;
+  }
+  dimension items {
+    label: 'Items'
+    type: 'unknown'
+    hidden: false
+    definition: @sql {{ #SOURCE.items }};;
+  }
+  dimension filters {
+    label: 'Filters'
+    type: 'unknown'
+    hidden: false
+    definition: @sql {{ #SOURCE.filters }};;
+  }
+  dimension owner_id {
+    label: 'Owner Id'
+    type: 'number'
+    hidden: false
+    definition: @sql {{ #SOURCE.owner_id }};;
+  }
+  dimension category_id {
+    label: 'Category Id'
+    type: 'number'
+    hidden: false
+    definition: @sql {{ #SOURCE.category_id }};;
+  }
+  dimension version {
+    label: 'Version'
+    type: 'number'
+    hidden: false
+    definition: @sql {{ #SOURCE.version }};;
+  }
+  dimension description {
+    label: 'Description'
+    type: 'text'
+    hidden: false
+    definition: @sql {{ #SOURCE.description }};;
+  }
+  dimension cross_filtering_enabled {
+    label: 'Cross Filtering Enabled'
+    type: 'truefalse'
+    hidden: false
+    definition: @sql {{ #SOURCE.cross_filtering_enabled }};;
+  }
+  dimension settings {
+    label: 'Settings'
+    type: 'unknown'
+    hidden: false
+    definition: @sql {{ #SOURCE.settings }};;
+  }
+  dimension searchable {
+    label: 'Searchable'
+    type: 'unknown'
+    hidden: false
+    definition: @sql {{ #SOURCE.searchable }};;
+  }
+  dimension last_edited_at {
+    label: 'Last Edited At'
+    type: 'datetime'
+    hidden: false
+    definition: @sql {{ #SOURCE.last_edited_at }};;
+  }
+  dimension last_edited_user_id {
+    label: 'Last Edited User Id'
+    type: 'number'
+    hidden: false
+    definition: @sql {{ #SOURCE.last_edited_user_id }};;
+  }
+  dimension views_count {
+    label: 'Views Count'
+    type: 'number'
+    hidden: false
+    definition: @sql {{ #SOURCE.views_count }};;
+  }
+  dimension favourites_count {
+    label: 'Favourites Count'
+    type: 'number'
+    hidden: false
+    definition: @sql {{ #SOURCE.favourites_count }};;
+  }
+
+  owner: 'admin@domain.com'
+  table_name: '"public"."dashboards"'
+}

@@ -1,0 +1,87 @@
+Model public_dynamic_filter_definitions {
+  type: 'table'
+  label: 'Dynamic Filter Definitions'
+  description: ''
+  data_source_name: 'development_1'
+  dimension id {
+    label: 'Id'
+    type: 'number'
+    hidden: false
+    definition: @sql {{ #SOURCE.id }};;
+  }
+  dimension filter_type {
+    label: 'Filter Type'
+    type: 'text'
+    hidden: false
+    definition: @sql {{ #SOURCE.filter_type }};;
+  }
+  dimension label {
+    label: 'Label'
+    type: 'text'
+    hidden: false
+    definition: @sql {{ #SOURCE.label }};;
+  }
+  dimension constraints {
+    label: 'Constraints'
+    type: 'unknown'
+    hidden: false
+    definition: @sql {{ #SOURCE.constraints }};;
+  }
+  dimension default_condition {
+    label: 'Default Condition'
+    type: 'unknown'
+    hidden: false
+    definition: @sql {{ #SOURCE.default_condition }};;
+  }
+  dimension is_shareable {
+    label: 'Is Shareable'
+    type: 'truefalse'
+    hidden: false
+    definition: @sql {{ #SOURCE.is_shareable }};;
+  }
+  dimension filter_source_type {
+    label: 'Filter Source Type'
+    type: 'text'
+    hidden: false
+    definition: @sql {{ #SOURCE.filter_source_type }};;
+  }
+  dimension filter_source_id {
+    label: 'Filter Source Id'
+    type: 'number'
+    hidden: false
+    definition: @sql {{ #SOURCE.filter_source_id }};;
+  }
+  dimension user_id {
+    label: 'User Id'
+    type: 'number'
+    hidden: false
+    definition: @sql {{ #SOURCE.user_id }};;
+  }
+  dimension tenant_id {
+    label: 'Tenant Id'
+    type: 'number'
+    hidden: false
+    definition: @sql {{ #SOURCE.tenant_id }};;
+  }
+  dimension created_at {
+    label: 'Created At'
+    type: 'datetime'
+    hidden: false
+    definition: @sql {{ #SOURCE.created_at }};;
+  }
+  dimension updated_at {
+    label: 'Updated At'
+    type: 'datetime'
+    hidden: false
+    definition: @sql {{ #SOURCE.updated_at }};;
+  }
+  dimension input_type {
+    label: 'Input Type'
+    type: 'text'
+    hidden: false
+    definition: @sql {{ #SOURCE.input_type }};;
+  }
+
+  owner: 'admin@domain.com'
+  table_name: '"public"."dynamic_filter_definitions"'
+}

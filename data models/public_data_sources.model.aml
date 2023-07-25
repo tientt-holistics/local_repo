@@ -1,0 +1,69 @@
+Model public_data_sources {
+  type: 'table'
+  label: 'Data Sources'
+  description: ''
+  data_source_name: 'development_1'
+  dimension id {
+    label: 'Id'
+    type: 'number'
+    hidden: false
+    definition: @sql {{ #SOURCE.id }};;
+  }
+  dimension name {
+    label: 'Name'
+    type: 'text'
+    hidden: false
+    definition: @sql {{ #SOURCE.name }};;
+  }
+  dimension dbtype {
+    label: 'Dbtype'
+    type: 'text'
+    hidden: false
+    definition: @sql {{ #SOURCE.dbtype }};;
+  }
+  dimension dbconfig {
+    label: 'Dbconfig'
+    type: 'text'
+    hidden: false
+    definition: @sql {{ #SOURCE.dbconfig }};;
+  }
+  dimension created_at {
+    label: 'Created At'
+    type: 'datetime'
+    hidden: false
+    definition: @sql {{ #SOURCE.created_at }};;
+  }
+  dimension updated_at {
+    label: 'Updated At'
+    type: 'datetime'
+    hidden: false
+    definition: @sql {{ #SOURCE.updated_at }};;
+  }
+  dimension tenant_id {
+    label: 'Tenant Id'
+    type: 'number'
+    hidden: false
+    definition: @sql {{ #SOURCE.tenant_id }};;
+  }
+  dimension settings {
+    label: 'Settings'
+    type: 'unknown'
+    hidden: false
+    definition: @sql {{ #SOURCE.settings }};;
+  }
+  dimension is_sample {
+    label: 'Is Sample'
+    type: 'truefalse'
+    hidden: false
+    definition: @sql {{ #SOURCE.is_sample }};;
+  }
+  dimension deleted_at {
+    label: 'Deleted At'
+    type: 'datetime'
+    hidden: false
+    definition: @sql {{ #SOURCE.deleted_at }};;
+  }
+
+  owner: 'admin@domain.com'
+  table_name: '"public"."data_sources"'
+}

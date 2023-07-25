@@ -1,0 +1,51 @@
+Model public_data_load_nodes {
+  type: 'table'
+  label: 'Data Load Nodes'
+  description: ''
+  data_source_name: 'development_1'
+  dimension id {
+    label: 'Id'
+    type: 'number'
+    hidden: false
+    definition: @sql {{ #SOURCE.id }};;
+  }
+  dimension data_load_sync_id {
+    label: 'Data Load Sync Id'
+    type: 'number'
+    hidden: false
+    definition: @sql {{ #SOURCE.data_load_sync_id }};;
+  }
+  dimension title {
+    label: 'Title'
+    type: 'text'
+    hidden: false
+    definition: @sql {{ #SOURCE.title }};;
+  }
+  dimension fqn {
+    label: 'Fqn'
+    type: 'text'
+    hidden: false
+    definition: @sql {{ #SOURCE.fqn }};;
+  }
+  dimension type {
+    label: 'Type'
+    type: 'text'
+    hidden: false
+    definition: @sql {{ #SOURCE.type }};;
+  }
+  dimension tenant_id {
+    label: 'Tenant Id'
+    type: 'number'
+    hidden: false
+    definition: @sql {{ #SOURCE.tenant_id }};;
+  }
+  dimension metadata {
+    label: 'Metadata'
+    type: 'unknown'
+    hidden: false
+    definition: @sql {{ #SOURCE.metadata }};;
+  }
+
+  owner: 'admin@domain.com'
+  table_name: '"public"."data_load_nodes"'
+}

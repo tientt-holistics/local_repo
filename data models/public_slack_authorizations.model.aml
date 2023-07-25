@@ -1,0 +1,75 @@
+Model public_slack_authorizations {
+  type: 'table'
+  label: 'Slack Authorizations'
+  description: ''
+  data_source_name: 'development_1'
+  dimension id {
+    label: 'Id'
+    type: 'number'
+    hidden: false
+    definition: @sql {{ #SOURCE.id }};;
+  }
+  dimension slack_user_id {
+    label: 'Slack User Id'
+    type: 'text'
+    hidden: false
+    definition: @sql {{ #SOURCE.slack_user_id }};;
+  }
+  dimension access_token {
+    label: 'Access Token'
+    type: 'text'
+    hidden: false
+    definition: @sql {{ #SOURCE.access_token }};;
+  }
+  dimension scope {
+    label: 'Scope'
+    type: 'text'
+    hidden: false
+    definition: @sql {{ #SOURCE.scope }};;
+  }
+  dimension slack_team_id {
+    label: 'Slack Team Id'
+    type: 'text'
+    hidden: false
+    definition: @sql {{ #SOURCE.slack_team_id }};;
+  }
+  dimension user_id {
+    label: 'User Id'
+    type: 'number'
+    hidden: false
+    definition: @sql {{ #SOURCE.user_id }};;
+  }
+  dimension tenant_id {
+    label: 'Tenant Id'
+    type: 'number'
+    hidden: false
+    definition: @sql {{ #SOURCE.tenant_id }};;
+  }
+  dimension created_at {
+    label: 'Created At'
+    type: 'datetime'
+    hidden: false
+    definition: @sql {{ #SOURCE.created_at }};;
+  }
+  dimension updated_at {
+    label: 'Updated At'
+    type: 'datetime'
+    hidden: false
+    definition: @sql {{ #SOURCE.updated_at }};;
+  }
+  dimension token_type {
+    label: 'Token Type'
+    type: 'text'
+    hidden: false
+    definition: @sql {{ #SOURCE.token_type }};;
+  }
+  dimension version {
+    label: 'Version'
+    type: 'text'
+    hidden: false
+    definition: @sql {{ #SOURCE.version }};;
+  }
+
+  owner: 'admin@domain.com'
+  table_name: '"public"."slack_authorizations"'
+}

@@ -1,0 +1,51 @@
+Model public_embed_link_identifier_variables {
+  type: 'table'
+  label: 'Embed Link Identifier Variables'
+  description: ''
+  data_source_name: 'development_1'
+  dimension id {
+    label: 'Id'
+    type: 'number'
+    hidden: false
+    definition: @sql {{ #SOURCE.id }};;
+  }
+  dimension embed_link_id {
+    label: 'Embed Link Id'
+    type: 'number'
+    hidden: false
+    definition: @sql {{ #SOURCE.embed_link_id }};;
+  }
+  dimension filter_ownership_id {
+    label: 'Filter Ownership Id'
+    type: 'number'
+    hidden: false
+    definition: @sql {{ #SOURCE.filter_ownership_id }};;
+  }
+  dimension legacy_customer_filter {
+    label: 'Legacy Customer Filter'
+    type: 'truefalse'
+    hidden: false
+    definition: @sql {{ #SOURCE.legacy_customer_filter }};;
+  }
+  dimension created_at {
+    label: 'Created At'
+    type: 'datetime'
+    hidden: false
+    definition: @sql {{ #SOURCE.created_at }};;
+  }
+  dimension updated_at {
+    label: 'Updated At'
+    type: 'datetime'
+    hidden: false
+    definition: @sql {{ #SOURCE.updated_at }};;
+  }
+  dimension tenant_id {
+    label: 'Tenant Id'
+    type: 'number'
+    hidden: false
+    definition: @sql {{ #SOURCE.tenant_id }};;
+  }
+
+  owner: 'admin@domain.com'
+  table_name: '"public"."embed_link_identifier_variables"'
+}
