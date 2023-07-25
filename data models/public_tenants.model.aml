@@ -1,12 +1,12 @@
 Model public_tenants {
   type: 'table'
   label: 'Tenants'
-  description: "xasdfasdf asdfadf adf adsf adff asdfdf asdfasdf asdfasdf adsf adsf asdfasdf"
+  description: "xasdfasdf asdfadf adf adsf adff asdfdf asdfasdf asdfasdf adsf adsf   "
   data_source_name: 'development_1'
   dimension id {
     label: "Id"
     type: "number"
-    definition: @sql {{ #SOURCE.id }};;
+    definition: @sql ({{ #SOURCE.id }});;
   }
   dimension name {
     label: 'Name'
@@ -15,16 +15,14 @@ Model public_tenants {
     definition: @sql {{ #SOURCE.name }};;
   }
   dimension created_at {
-    label: 'Created At'
-    type: 'datetime'
-    hidden: false
-    definition: @sql {{ #SOURCE.created_at }};;
+    label: "Created At"
+    type: "datetime"
+    definition: @sql COUNT({{ #SOURCE.created_at }});;
   }
   dimension updated_at {
-    label: 'Updated At'
-    type: 'datetime'
-    hidden: false
-    definition: @sql {{ #SOURCE.updated_at }};;
+    label: "Updated At"
+    type: "datetime"
+    definition: @sql COUNT({{ #SOURCE.updated_at }});;
   }
   dimension settings {
     label: 'Settings'
