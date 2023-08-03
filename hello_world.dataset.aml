@@ -1,6 +1,6 @@
 Dataset hello_world {
   label: 'Hello World'
-  description: "123 fgsfg"
+  description: "123"
   data_source_name: 'development_1'
   models: [
     public_job_flow_logs,
