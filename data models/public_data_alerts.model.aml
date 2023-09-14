@@ -7,7 +7,7 @@ Model public_data_alerts {
     label: 'Id'
     type: 'number'
     hidden: false
-    definition: @sql {{ #SOURCE.id }};;
+    definition: @sql {{ #SOURCE.id }};; 1231232
   }
   dimension title {
     label: 'Title'

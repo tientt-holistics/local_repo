@@ -66,4 +66,10 @@ Model public_activation_codes {
 
   owner: 'admin@domain.com'
   table_name: '"public"."activation_codes"'
+  measure hello {
+    label: "Hello"
+    type: "number"
+    definition: @sql COUNT({{ code }});;
+    aggregation_type: "custom"
+  }
 }
