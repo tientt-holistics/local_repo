@@ -1,0 +1,70 @@
+Model slow_kotex {
+  type: 'query'
+  label: 'Slow Kotex'
+  description: ''
+  data_source_name: 'development_1'
+  dimension i {
+    label: 'I'
+    type: 'number'
+    hidden: false
+    definition: @sql {{ #SOURCE.i }};;
+  }
+  dimension order_time {
+    label: 'Order Time'
+    type: 'datetime'
+    hidden: false
+    definition: @sql {{ #SOURCE.order_time }};;
+  }
+  dimension gender {
+    label: 'Gender'
+    type: 'text'
+    hidden: false
+    definition: @sql {{ #SOURCE.gender }};;
+  }
+  dimension product {
+    label: 'Product'
+    type: 'text'
+    hidden: false
+    definition: @sql {{ #SOURCE.product }};;
+  }
+  dimension price {
+    label: 'Price'
+    type: 'number'
+    hidden: false
+    definition: @sql {{ #SOURCE.price }};;
+  }
+  dimension rating {
+    label: 'Rating'
+    type: 'number'
+    hidden: false
+    definition: @sql {{ #SOURCE.rating }};;
+  }
+  dimension sleep_seconds {
+    label: 'Sleep Seconds'
+    type: 'number'
+    hidden: false
+    definition: @sql {{ #SOURCE.sleep_seconds }};;
+  }
+
+  owner: 'admin@domain.com'
+  query: @sql
+    with
+      r(x) as (
+        select 5 + floor(random () * 5 + 1)::int
+      )
+      , t as (
+        select pg_sleep(x), x
+        from r
+      )
+      , k as (
+        select i, (now () + (ceil(random() * 365) || ' day') :: interval)::timestamp as order_time,
+        ('{"Male", "Female"}' :: text []) [ceil(random() * 2)] as gender,
+        ( '{"Vodka", "Laurier", "Diana", "Heineken", "Tiger"}' :: text [] ) [ceil(random() * 5)] as product,
+        round((random() * 99) :: numeric, 2) as price, ceil(random() * 5) as rating from ( select generate_series(1, 10000, 1) as i ) s
+      )
+    select k.*, t.x as sleep_seconds
+    from k
+      left join t on 1 = 1;;
+  models: [
+  ]
+}
