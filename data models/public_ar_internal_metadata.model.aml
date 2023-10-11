@@ -1,7 +1,7 @@
 Model public_ar_internal_metadata {
   type: 'table'
   label: 'Ar Internal Metadata'
-  description: ''
+  description: "123"
   data_source_name: 'development_1'
   dimension key {
     label: 'Key'
