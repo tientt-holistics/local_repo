@@ -10,7 +10,7 @@ Model public_activation_codes {
     definition: @sql {{ #SOURCE.code }};;
   }
   dimension activation_type {
-    label: 'Activation Type 123123123123'
+    label: 'Activation Type'
     type: 'text'
     hidden: false
     definition: @sql {{ #SOURCE.activation_type }};;
