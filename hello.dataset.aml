@@ -1,0 +1,11 @@
+Dataset hello {
+  label: 'Hello'
+  description: ''
+  data_source_name: 'development_1'
+  models: [
+    public_test_name
+  ]
+  relationships: [
+  ]
+  owner: 'admin@domain.com'
+}

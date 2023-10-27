@@ -1,0 +1,3 @@
+const schedules = [
+  Schedule { models: [test_persistence], cron: '*/5 * * * *' }
+]
