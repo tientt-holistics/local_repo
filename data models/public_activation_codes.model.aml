@@ -66,4 +66,28 @@ Model public_activation_codes {
 
   owner: 'admin@domain.com'
   table_name: '"public"."activation_codes"'
+  measure aadsfdasf {
+    label: "Aadsfdasf"
+    type: "number"
+    definition: @sql count({{ code }});;
+    aggregation_type: "custom"
+  }
+  measure afdgsdfgfdsg {
+    label: "Afdgsdfgfdsg"
+    type: "number"
+    definition: @sql {{ activation_type }};;
+    aggregation_type: "count"
+  }
+  measure asdfasfdasfasdf {
+    label: "Asdfasfdasfasdf"
+    type: "number"
+    definition: @sql {{ aadsfdasf }};;
+    aggregation_type: "custom"
+  }
+  measure vcv {
+    label: "Vcv"
+    type: "number"
+    definition: @sql {{ expired_at }};;
+    aggregation_type: "custom"
+  }
 }

@@ -1,11 +1,21 @@
 Dataset hello {
+  __engine__: 'aql'
   label: 'Hello'
   description: ''
   data_source_name: 'development_1'
   models: [
-    public_test_name
+    public_users
   ]
   relationships: [
   ]
   owner: 'admin@domain.com'
+  dimension aql_metric {
+    model: public_users
+    label: 'AQL Metric Label'
+    type: 'text'
+    description: 'AQL Metric description'
+    definition: @aql
+      public_users.name
+    ;;
+  }
 }
