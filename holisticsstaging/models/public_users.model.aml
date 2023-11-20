@@ -1,20 +1,8 @@
 Model public_users {
   type: 'table'
-  label: "Nice"
+  label: 'Users'
   description: ''
-  data_source_name: 'development_1'
-  dimension id {
-    label: 'Id'
-    type: 'number'
-    hidden: false
-    definition: @sql {{ #SOURCE.id }};;
-  }
-  dimension allow_authentication_token {
-    label: 'Allow Authentication Token'
-    type: 'truefalse'
-    hidden: false
-    definition: @sql {{ #SOURCE.allow_authentication_token }};;
-  }
+  data_source_name: 'holisticsstaging'
   dimension name {
     label: 'Name'
     type: 'text'
@@ -63,12 +51,6 @@ Model public_users {
     hidden: false
     definition: @sql {{ #SOURCE.remember_created_at }};;
   }
-  dimension sign_in_count {
-    label: 'Sign In Count'
-    type: 'number'
-    hidden: false
-    definition: @sql {{ #SOURCE.sign_in_count }};;
-  }
   dimension current_sign_in_at {
     label: 'Current Sign In At'
     type: 'datetime'
@@ -104,12 +86,6 @@ Model public_users {
     type: 'datetime'
     hidden: false
     definition: @sql {{ #SOURCE.updated_at }};;
-  }
-  dimension tenant_id {
-    label: 'Tenant Id'
-    type: 'number'
-    hidden: false
-    definition: @sql {{ #SOURCE.tenant_id }};;
   }
   dimension authentication_token {
     label: 'Authentication Token'
@@ -153,6 +129,18 @@ Model public_users {
     hidden: false
     definition: @sql {{ #SOURCE.nux }};;
   }
+  dimension sign_in_count {
+    label: 'Sign In Count'
+    type: 'number'
+    hidden: false
+    definition: @sql {{ #SOURCE.sign_in_count }};;
+  }
+  dimension allow_authentication_token {
+    label: 'Allow Authentication Token'
+    type: 'truefalse'
+    hidden: false
+    definition: @sql {{ #SOURCE.allow_authentication_token }};;
+  }
   dimension last_visited_node {
     label: 'Last Visited Node'
     type: 'unknown'
@@ -177,11 +165,17 @@ Model public_users {
     hidden: false
     definition: @sql {{ #SOURCE.session_token }};;
   }
-  dimension initials {
-    label: 'Initials'
-    type: 'text'
+  dimension id {
+    label: 'Id'
+    type: 'number'
     hidden: false
-    definition: @sql {{ #SOURCE.initials }};;
+    definition: @sql {{ #SOURCE.id }};;
+  }
+  dimension tenant_id {
+    label: 'Tenant Id'
+    type: 'number'
+    hidden: false
+    definition: @sql {{ #SOURCE.tenant_id }};;
   }
   dimension dev_mode_enabled {
     label: 'Dev Mode Enabled'
@@ -189,24 +183,13 @@ Model public_users {
     hidden: false
     definition: @sql {{ #SOURCE.dev_mode_enabled }};;
   }
-  dimension job_title {
-    label: 'Job Title'
+  dimension initials {
+    label: 'Initials'
     type: 'text'
     hidden: false
-    definition: @sql {{ #SOURCE.job_title }};;
-  }
-  dimension tien {
-    label: "Tien"
-    type: "text"
-    definition: @sql {{ nux }};;
+    definition: @sql {{ #SOURCE.initials }};;
   }
 
-  owner: 'admin@domain.com'
+  owner: 'hien.nguyen+staging@holistics.io'
   table_name: '"public"."users"'
-  measure measure {
-    label: "Measure"
-    type: "number"
-    definition: @sql {{ role }};;
-    aggregation_type: "avg"
-  }
 }

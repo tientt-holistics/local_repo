@@ -1,11 +1,11 @@
-Model public_users {
+Model default_persisted_public_users {
   type: 'table'
-  label: "Nice"
+  label: 'Persisted Public Users'
   description: ''
-  data_source_name: 'development_1'
+  data_source_name: 'athena_engine_3'
   dimension id {
     label: 'Id'
-    type: 'number'
+    type: 'text'
     hidden: false
     definition: @sql {{ #SOURCE.id }};;
   }
@@ -107,7 +107,7 @@ Model public_users {
   }
   dimension tenant_id {
     label: 'Tenant Id'
-    type: 'number'
+    type: 'text'
     hidden: false
     definition: @sql {{ #SOURCE.tenant_id }};;
   }
@@ -131,7 +131,7 @@ Model public_users {
   }
   dimension settings {
     label: 'Settings'
-    type: 'unknown'
+    type: 'text'
     hidden: false
     definition: @sql {{ #SOURCE.settings }};;
   }
@@ -149,13 +149,13 @@ Model public_users {
   }
   dimension nux {
     label: 'Nux'
-    type: 'unknown'
+    type: 'text'
     hidden: false
     definition: @sql {{ #SOURCE.nux }};;
   }
   dimension last_visited_node {
     label: 'Last Visited Node'
-    type: 'unknown'
+    type: 'text'
     hidden: false
     definition: @sql {{ #SOURCE.last_visited_node }};;
   }
@@ -189,24 +189,13 @@ Model public_users {
     hidden: false
     definition: @sql {{ #SOURCE.dev_mode_enabled }};;
   }
-  dimension job_title {
-    label: 'Job Title'
-    type: 'text'
-    hidden: false
-    definition: @sql {{ #SOURCE.job_title }};;
-  }
-  dimension tien {
-    label: "Tien"
+  dimension alo {
+    label: "Alo"
     type: "text"
-    definition: @sql {{ nux }};;
+    definition: @sql {{ name }}{{ email }}{{ role }};;
+    description: "alo"
   }
 
-  owner: 'admin@domain.com'
-  table_name: '"public"."users"'
-  measure measure {
-    label: "Measure"
-    type: "number"
-    definition: @sql {{ role }};;
-    aggregation_type: "avg"
-  }
+  owner: 'duong.ht@holistics.io'
+  table_name: '"default"."persisted_public_users"'
 }
